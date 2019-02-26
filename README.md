@@ -67,6 +67,10 @@
 
 
 
+**预览（刚开始开发，只完成了“简单版微博”部分）：https://fakes.netlify.com/**
+
+![预览](http://wx2.sinaimg.cn/large/006fVPCvly1g0jvjz7fmyj30je0bpwf3.jpg)
+
 #### 技术栈
 
 ------
