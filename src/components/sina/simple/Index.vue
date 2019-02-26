@@ -128,6 +128,10 @@ export default {
         dom.removeChild(dom.childNodes[0]);
       }
       dom.appendChild(this.canvas);
+      const ctx = this.canvas.getContext("2d");
+      ctx.font = "20px microsoft yahei";
+      ctx.fillStyle = "#DDDDDD";
+      ctx.fillText("https://fakes.netlify.com", 300, 25);
     },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
