@@ -68,17 +68,17 @@
         <div id="DIV_38">
           <ul id="UL_39">
             <li id="LI_40">
-              <a href="javascript:void(0);" id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></a>
+              <span  id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></span>
             </li>
             <li id="LI_47">
-              <a href="javascript:void(0);" id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></a> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
+              <span  id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></span> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
             </li>
             <li id="LI_58">
-              <a href="javascript:void(0);" id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></a> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
+              <span  id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></span> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
             </li>
             <li id="LI_69">
               <!--cuslike用于前端判断是否显示个性赞，1:显示-->
-              <a href="javascript:void(0);" title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></a> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
+              <span  title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
             </li>
           </ul>
         </div>
