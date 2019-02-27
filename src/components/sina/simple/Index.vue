@@ -168,7 +168,6 @@ export default {
     },
     download() {
       let download = document.getElementById("download");
-      let img = new Image();
       let image = document
         .querySelector("canvas")
         .toDataURL("image/png")
