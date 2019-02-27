@@ -13,6 +13,14 @@
         </a>
       </span>
     </el-dialog>
+    <el-dialog title="" :visible.sync = "isMentioned">
+      <div>
+        <el-input autofocus title="@someon" placeholder="输入用户名" v-model = "mentionPerson" @keyup.enter.native="getMention">
+          <template slot="prepend">@</template>
+        </el-input>
+        <el-button @click="getMention" style="margin-left:40%;margin-top:20px">确定</el-button>
+      </div>
+    </el-dialog>
     <div id="DIV_1">
       <div id="DIV_2">
         <div id="DIV_3">
@@ -48,7 +56,7 @@
           </div>
           <div id="DIV_26">
           </div>
-          <div id="DIV_27" v-html='content' :contenteditable="edit">
+          <div id="DIV_27" v-html= 'content'  :contenteditable="edit" @input="changeContent">
           </div>
         </div>
         <div id="DIV_35">
@@ -60,17 +68,17 @@
         <div id="DIV_38">
           <ul id="UL_39">
             <li id="LI_40">
-              <a href="javascript:void(0);" id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></a>
+              <span  id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></span>
             </li>
             <li id="LI_47">
-              <a href="javascript:void(0);" id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></a> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
+              <span  id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></span> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
             </li>
             <li id="LI_58">
-              <a href="javascript:void(0);" id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></a> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
+              <span  id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></span> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
             </li>
             <li id="LI_69">
               <!--cuslike用于前端判断是否显示个性赞，1:显示-->
-              <a href="javascript:void(0);" title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></a> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
+              <span  title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
             </li>
           </ul>
         </div>
@@ -99,10 +107,26 @@ export default {
       from: "iPhone客户端",
       time: "2020-12-12 12:12",
       content: "Vue3.0今天正式发布！",
-      canvas: ""
-    };
+      canvas: "",
+      mentionPerson: '',
+      isMentioned: false
+    }
   },
   methods: {
+    getMention() {
+      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML.slice(0,document.querySelector("#DIV_27").innerHTML.length-1);
+      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML + `<span style="color:#eb7350">@${this.mentionPerson}</span>&nbsp;`
+      this.mentionPerson = '';
+      this.isMentioned = false;
+    },
+    changeContent(e) {
+      //不能直接绑定到content,否则会导致光标位置错误！
+      //也无法使用v-model绑定
+      let contentText = e.target.innerHTML;
+      if(contentText.slice('')[contentText.length-1]==='@'){
+          this.isMentioned = true;
+      }
+    },
     changeMode() {
       this.edit = !this.edit;
     },
@@ -115,7 +139,7 @@ export default {
       });
     },
     generageScreenShot() {
-      html2canvas(document.querySelector("#DIV_1"), { allowTaint: true }).then(
+      html2canvas(document.querySelector("#DIV_1"), {allowTaint:true, useCORS: true}).then(
         canvas => {
           this.dialogVisible = true;
           this.canvas = canvas;
