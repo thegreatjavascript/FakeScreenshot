@@ -13,6 +13,14 @@
         </a>
       </span>
     </el-dialog>
+    <el-dialog title="" :visible.sync = "isMentioned">
+      <div>
+        <el-input title="@someon" placeholder="输入用户名" v-model = "mentionPerson" @keyup.enter.native="getMention">
+          <template slot="prepend">@</template>
+        </el-input>
+        <el-button @click="getMention" style="margin-left:40%;margin-top:20px">确定</el-button>
+      </div>
+    </el-dialog>
     <div id="DIV_1">
       <div id="DIV_2">
         <div id="DIV_3">
@@ -48,7 +56,7 @@
           </div>
           <div id="DIV_26">
           </div>
-          <div id="DIV_27" v-html='content' :contenteditable="edit">
+          <div id="DIV_27" v-html= 'content'  :contenteditable="edit" @input="changeContent">
           </div>
         </div>
         <div id="DIV_35">
@@ -99,10 +107,26 @@ export default {
       from: "iPhone客户端",
       time: "2020-12-12 12:12",
       content: "Vue3.0今天正式发布！",
-      canvas: ""
-    };
+      canvas: "",
+      mentionPerson: '',
+      isMentioned: false
+    }
   },
   methods: {
+    getMention() {
+      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML.slice(0,document.querySelector("#DIV_27").innerHTML.length-1);
+      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML + `<span style="color:#eb7350">@${this.mentionPerson}<span>`
+      this.mentionPerson = '';
+      this.isMentioned = false;
+    },
+    changeContent(e) {
+      //不能直接绑定到content,否则会导致光标位置错误！
+      //也无法使用v-model绑定
+      let contentText = e.target.innerHTML;
+      if(contentText.slice('')[contentText.length-1]==='@'){
+          this.isMentioned = true;
+      }
+    },
     changeMode() {
       this.edit = !this.edit;
     },
@@ -115,7 +139,7 @@ export default {
       });
     },
     generageScreenShot() {
-      html2canvas(document.querySelector("#DIV_1"), { allowTaint: true }).then(
+      html2canvas(document.querySelector("#DIV_1"), {allowTaint:true, useCORS: true}).then(
         canvas => {
           this.dialogVisible = true;
           this.canvas = canvas;
@@ -144,6 +168,7 @@ export default {
     },
     download() {
       let download = document.getElementById("download");
+      let img = new Image();
       let image = document
         .querySelector("canvas")
         .toDataURL("image/png")
