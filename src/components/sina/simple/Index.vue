@@ -15,7 +15,7 @@
     </el-dialog>
     <el-dialog title="" :visible.sync = "isMentioned">
       <div>
-        <el-input title="@someon" placeholder="输入用户名" v-model = "mentionPerson" @keyup.enter.native="getMention">
+        <el-input autofocus title="@someon" placeholder="输入用户名" v-model = "mentionPerson" @keyup.enter.native="getMention">
           <template slot="prepend">@</template>
         </el-input>
         <el-button @click="getMention" style="margin-left:40%;margin-top:20px">确定</el-button>
@@ -115,7 +115,7 @@ export default {
   methods: {
     getMention() {
       document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML.slice(0,document.querySelector("#DIV_27").innerHTML.length-1);
-      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML + `<span style="color:#eb7350">@${this.mentionPerson}<span>`
+      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML + `<span style="color:#eb7350">@${this.mentionPerson}</span>&nbsp;`
       this.mentionPerson = '';
       this.isMentioned = false;
     },
