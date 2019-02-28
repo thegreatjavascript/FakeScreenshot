@@ -8,12 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'sinasimple',
-      component: () => import('../components/sina/simple')
+      component: () => import('@/components/sina/simple')
     },
     {
       path: '/zhihu',
       name: 'zhihusimple',
-      component: () => import('../components/zhihu/simple')
+      component: () => import('@/components/zhihu/simple')
     }
   ]
 })
