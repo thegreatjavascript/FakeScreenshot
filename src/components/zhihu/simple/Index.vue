@@ -23,12 +23,12 @@
                 <div class="QuestionHeader-main">
                   <div class="QuestionHeader-tags">
                     <div class="QuestionHeader-topics">
-                      <div class="Tag QuestionTopic" data-za-detail-view-path-module="TopicItem" data-za-extra-module='{"card":{"content":{"type":"Topic","token":"19560775"}}}'><span class="Tag-content"><a class="TopicLink" href="" target="_blank">
+                      <div class="Tag QuestionTopic" data-za-detail-view-path-module="TopicItem" data-za-extra-module='{"card":{"content":{"type":"Topic","token":"19560775"}}}'><span class="Tag-content"><a class="TopicLink"  target="_blank">
                             <div class="Popover">
                               <div id="Popover3-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover3-content" :contenteditable='edit' v-html='tags_0'></div>
                             </div>
                           </a></span></div>
-                      <div class="Tag QuestionTopic" data-za-detail-view-path-module="TopicItem" data-za-extra-module='{"card":{"content":{"type":"Topic","token":"19563436"}}}'><span class="Tag-content"><a class="TopicLink" href="" target="_blank">
+                      <div class="Tag QuestionTopic" data-za-detail-view-path-module="TopicItem" data-za-extra-module='{"card":{"content":{"type":"Topic","token":"19563436"}}}'><span class="Tag-content"><a class="TopicLink"  target="_blank">
                             <div class="Popover">
                               <div id="Popover4-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover4-content" :contenteditable='edit' v-html='tags_1'></div>
                             </div>
@@ -100,7 +100,7 @@
           <div class="Question-main">
             <div class="ListShortcut">
               <div class="Question-mainColumn" data-zop-questionanswerlist="true">
-                <div class="Card ViewAll" data-za-detail-view-path-module="MessageItem" data-za-extra-module='{"card":{"content":{"item_num":1631}}}'><a class="QuestionMainAction ViewAll-QuestionMainAction" href="" data-za-detail-view-element_name="ViewAll">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
+                <div class="Card ViewAll" data-za-detail-view-path-module="MessageItem" data-za-extra-module='{"card":{"content":{"item_num":1631}}}'><a class="QuestionMainAction ViewAll-QuestionMainAction"  data-za-detail-view-element_name="ViewAll">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
                 <div class="Card AnswerCard">
                   <div tabindex="-1" class="QuestionAnswer-content">
                     <div class="ContentItem AnswerItem" itemtype="http://schema.org/Answer" itemscope="" itemprop="mainEntityOfPage" name="587184688" data-zop='{"authorName":"对抗假截图","itemId":587184688,"title":"你听过最美的网名是什么？","type":"answer"}' data-za-detail-view-path-module="AnswerItem" data-za-extra-module='{"card":{"has_image":false,"has_video":false,"content":{"type":"Answer","token":"587184688","upvote_num":45706,"comment_num":1726,"publish_timestamp":null,"parent_token":"27731412","author_member_hash_id":"32c6bf07105f5b76de8fcb89973c52f6"}}}'>
@@ -108,13 +108,13 @@
                         <div class="AuthorInfo AnswerItem-authorInfo AnswerItem-authorInfo--related" itemtype="http://schema.org/Person" itemscope="" itemprop="author">
                           <span class="UserLink AuthorInfo-avatarWrapper">
                             <div class="Popover">
-                              <div id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></div>
+                              <div id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></div>
                             </div>
                           </span>
                           <div class="AuthorInfo-content">
                             <div class="AuthorInfo-head"><span class="UserLink AuthorInfo-name">
                                 <div class="Popover">
-                                  <div id="Popover8-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover8-content"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="User" :contenteditable="edit" v-html='nickname'></a></div>
+                                  <div id="Popover8-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover8-content"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User" :contenteditable="edit" v-html='nickname'></a></div>
                                 </div>
                               </span></div>
                             <div class="AuthorInfo-detail">
@@ -131,7 +131,7 @@
                             <p :contenteditable="edit" v-html='content'></p>
                           </span></div>
                         <div>
-                          <div class="ContentItem-time"><a href="" target="_blank"><span data-tooltip="发布于 2019-02-01 14:19">编辑于 <span :contenteditable='edit' v-html='time'></span></span></a></div>
+                          <div class="ContentItem-time"><a  target="_blank"><span data-tooltip="发布于 2019-02-01 14:19">编辑于 <span :contenteditable='edit' v-html='time'></span></span></a></div>
                         </div>
                         <div>
                           <div class="ContentItem-actions Sticky RichContent-actions is-bottom"><span><button class="Button VoteButton VoteButton--up" aria-label="赞同" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--TriangleUp VoteButton-TriangleUp" fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
@@ -153,7 +153,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="Card ViewAll" data-za-detail-view-path-module="MessageItem" data-za-extra-module='{"card":{"content":{"item_num":1631}}}'><a class="QuestionMainAction ViewAll-QuestionMainAction" href="" data-za-detail-view-element_name="ViewAll">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
+                <div class="Card ViewAll" data-za-detail-view-path-module="MessageItem" data-za-extra-module='{"card":{"content":{"item_num":1631}}}'><a class="QuestionMainAction ViewAll-QuestionMainAction"  data-za-detail-view-element_name="ViewAll">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
               </div>
             </div>
             <div class="Question-sideColumn Question-sideColumn--sticky" data-za-detail-view-path-module="RightSideBar" data-za-extra-module='{"card":{"content":{"member_hash_id":"32c6bf07105f5b76de8fcb89973c52f6"}}}'>
@@ -166,9 +166,9 @@
                     </div>
                     <div class="Card-section">
                       <div class="AnswerAuthor-user">
-                        <div class="AnswerAuthor-user-avatar"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="User"><img width="60" height="60" class="Avatar Avatar--large UserLink-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></span></div>
+                        <div class="AnswerAuthor-user-avatar"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="User"><img width="60" height="60" class="Avatar Avatar--large UserLink-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></span></div>
                         <div class="AnswerAuthor-user-content">
-                          <div class="AnswerAuthor-user-name"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="User">对抗假截图</a></span></div>
+                          <div class="AnswerAuthor-user-name"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="User">对抗假截图</a></span></div>
                           <div class="AnswerAuthor-user-headline">
                             <div class="RichText ztext" :contenteditable="edit" v-html='slogan'></div>
                           </div>
@@ -178,15 +178,15 @@
                     <div class="Card-section"></div>
                     <div class="Card-section">
                       <div class="AnswerAuthor-counts">
-                        <div class="NumberBoard"><a class="Button NumberBoard-item Button--plain" href="/people/desire-49-8/answers" type="button" data-za-detail-view-element_name="Answer">
+                        <div class="NumberBoard"><a class="Button NumberBoard-item Button--plain"  type="button" data-za-detail-view-element_name="Answer">
                             <div class="NumberBoard-itemInner">
                               <div class="NumberBoard-itemName">回答</div><strong title="14" class="NumberBoard-itemValue" :contenteditable='edit' v-html='answerNumber'></strong>
                             </div>
-                          </a><a class="Button NumberBoard-item Button--plain" href="" type="button" data-za-detail-view-element_name="Post">
+                          </a><a class="Button NumberBoard-item Button--plain"  type="button" data-za-detail-view-element_name="Post">
                             <div class="NumberBoard-itemInner">
                               <div class="NumberBoard-itemName">文章</div><strong title="0" class="NumberBoard-itemValue" :contenteditable='edit' v-html='articleNumber'></strong>
                             </div>
-                          </a><a class="Button NumberBoard-item Button--plain" href="" type="button" data-za-detail-view-element_name="Follower">
+                          </a><a class="Button NumberBoard-item Button--plain"  type="button" data-za-detail-view-element_name="Follower">
                             <div class="NumberBoard-itemInner">
                               <div class="NumberBoard-itemName">关注者</div><strong title="809" class="NumberBoard-itemValue" :contenteditable='edit' v-html='followerNumber'></strong>
                             </div>
@@ -203,28 +203,28 @@
                     </div>
                     <div class="Card-section AnswerInfo-favlists" data-za-detail-view-path-module="CollectionList" data-za-extra-module='{"card":{"content":null}}'>
                       <div class="AnswerInfo-favlist" data-za-detail-view-path-module="CollectionItem" data-za-extra-module='{"card":{"content":{"type":"Collection","token":"19641505","follower_num":19365,"author_member_hash_id":"5667923476ccf909a19d332aa29e72d3"}}}'>
-                        <div class="AnswerInfo-favlist-title"><a title="有趣的回答" class="Button Button--plain" href="" target="_blank" type="button" data-za-detail-view-element_name="Collection">有趣的回答</a></div>
-                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="Author">光风</a></span> 创建</div>
+                        <div class="AnswerInfo-favlist-title"><a title="有趣的回答" class="Button Button--plain" target="_blank" type="button" data-za-detail-view-element_name="Collection">有趣的回答</a></div>
+                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="Author">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">19,365 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist" data-za-detail-view-path-module="CollectionItem" data-za-extra-module='{"card":{"content":{"type":"Collection","token":"36316871","follower_num":5338,"author_member_hash_id":"c1b4dc828f3e3f70a01936971443a75d"}}}'>
-                        <div class="AnswerInfo-favlist-title"><a title="浩瀚的宇宙和漫漫的浮生" class="Button Button--plain" href="" target="_blank" type="button" data-za-detail-view-element_name="Collection">浩瀚的宇宙和漫漫的浮生</a></div>
-                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="Author">海蒲</a></span> 创建</div>
+                        <div class="AnswerInfo-favlist-title"><a title="浩瀚的宇宙和漫漫的浮生" class="Button Button--plain"  target="_blank" type="button" data-za-detail-view-element_name="Collection">浩瀚的宇宙和漫漫的浮生</a></div>
+                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="Author">海蒲</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">5,338 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist" data-za-detail-view-path-module="CollectionItem" data-za-extra-module='{"card":{"content":{"type":"Collection","token":"20132596","follower_num":1417,"author_member_hash_id":"9d89b1b67de3a6c9202e44315dcaec52"}}}'>
-                        <div class="AnswerInfo-favlist-title"><a title="watch later" class="Button Button--plain" href="/" target="_blank" type="button" data-za-detail-view-element_name="Collection">watch later</a></div>
-                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="Author">丁鹄儒</a></span> 创建</div>
+                        <div class="AnswerInfo-favlist-title"><a title="watch later" class="Button Button--plain" target="_blank" type="button" data-za-detail-view-element_name="Collection">watch later</a></div>
+                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="Author">丁鹄儒</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">1,417 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist" data-za-detail-view-path-module="CollectionItem" data-za-extra-module='{"card":{"content":{"type":"Collection","token":"19552963","follower_num":236,"author_member_hash_id":"5667923476ccf909a19d332aa29e72d3"}}}'>
-                        <div class="AnswerInfo-favlist-title"><a title="马克" class="Button Button--plain" href="" target="_blank" type="button" data-za-detail-view-element_name="Collection">马克</a></div>
-                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="Author">光风</a></span> 创建</div>
+                        <div class="AnswerInfo-favlist-title"><a title="马克" class="Button Button--plain"  target="_blank" type="button" data-za-detail-view-element_name="Collection">马克</a></div>
+                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="Author">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">236 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist" data-za-detail-view-path-module="CollectionItem" data-za-extra-module='{"card":{"content":{"type":"Collection","token":"72477649","follower_num":119,"author_member_hash_id":"6ea0e5d46c29ef0747d6eec92b1357af"}}}'>
-                        <div class="AnswerInfo-favlist-title"><a title="感兴趣的有用的" class="Button Button--plain" href="" target="_blank" type="button" data-za-detail-view-element_name="Collection">感兴趣的有用的</a></div>
-                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="Author">傻傻</a></span> 创建</div>
+                        <div class="AnswerInfo-favlist-title"><a title="感兴趣的有用的" class="Button Button--plain"  target="_blank" type="button" data-za-detail-view-element_name="Collection">感兴趣的有用的</a></div>
+                        <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="Author">傻傻</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">119 人关注</div>
                       </div>
                     </div>
@@ -235,22 +235,22 @@
                     </div>
                     <div class="Card-section SimilarQuestions-list">
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"61647906"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有没有什么有含义的网名？</a> 8 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有没有什么有含义的网名？</a> 8 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"287909511"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">取过什么惊艳的网名？</a> 3 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">取过什么惊艳的网名？</a> 3 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"59142292"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有没有很好听的网名？</a> 111 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有没有很好听的网名？</a> 111 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"58213013"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有什么好听的网名吗？</a> 6 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有什么好听的网名吗？</a> 6 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"47274584"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">是否有自己多年不想更换的、有故事的网名昵称等？</a> 12 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">是否有自己多年不想更换的、有故事的网名昵称等？</a> 12 个回答</div>
                     </div>
                   </div>
                   <div class="Card" data-za-detail-view-path-module="ContentList" data-za-extra-module='{"card":{"content":null}}' data-za-detail-view-path-module_name="相关推荐">
                     <div class="Card-header RelatedCommodities-title">
                       <div class="Card-headerText">相关推荐</div>
                     </div>
-                    <div class="Card-section RelatedCommodities-list"><a class="Button RelatedCommodities-item Button--plain" href="" target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67d7e5yj306y043glk.jpg">
+                    <div class="Card-section RelatedCommodities-list"><a class="Button RelatedCommodities-item Button--plain"  target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67d7e5yj306y043glk.jpg">
                         <div class="RelatedCommodities-content">
                           <div class="RelatedCommodities-subject RelatedCommodities-subject-two">管清友教你 2019 年怎么投？穿越经济周期的投资课</div>
                           <div class="RelatedCommodities-meta">
@@ -259,7 +259,7 @@
                             </div>
                           </div>
                         </div>
-                      </a><a class="Button RelatedCommodities-item Button--plain" href="" target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007iUjdily1g0m63srboej306y099aaj.jpg">
+                      </a><a class="Button RelatedCommodities-item Button--plain"  target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007iUjdily1g0m63srboej306y099aaj.jpg">
                         <div class="RelatedCommodities-content">
                           <div class="RelatedCommodities-subject" data-tooltip="我们为什么上班？">我们为什么上班？</div>
                           <div class="RelatedCommodities-description">张佳玮</div>
@@ -359,10 +359,6 @@ export default {
         dom.removeChild(dom.childNodes[0]);
       }
       dom.appendChild(this.canvas);
-      const ctx = this.canvas.getContext("2d");
-      ctx.font = "20px microsoft yahei";
-      ctx.fillStyle = "rgba(221,221,221,0.9)";
-      ctx.fillText("什么是真相？https://fakes.netlify.com", 500, 300);
     },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
@@ -375,11 +371,15 @@ export default {
     },
     download() {
       let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
+      let image = new Image();
+      image.crossOrigin= "anonymous";
+      image.onload=function(){
+        image.src = document
+          .querySelector("canvas")
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+      }
+      download.setAttribute("href", image.src);
     }
   }
 };
