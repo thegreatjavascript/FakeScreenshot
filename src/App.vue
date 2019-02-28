@@ -21,12 +21,9 @@ export default {
 
 <style lang='scss' scoped>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin: auto;
   margin-top: 80px;
-  .tab-bar {
+  > .tab-bar {
     display: flex;
     justify-content: center;
     width: fit-content;

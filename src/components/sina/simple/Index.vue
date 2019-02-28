@@ -83,7 +83,6 @@
 
 <script>
 import html2canvas from "html2canvas";
-import json from "./avatar.json";
 
 export default {
   name: "SinaSimple",
@@ -91,14 +90,15 @@ export default {
     return {
       dialogVisible: false,
       edit: false,
-      nickname: "尤小右",
-      avatar: json.avatar,
+      nickname: "鲁迅",
+      avatar:
+        "https://ww1.sinaimg.cn/large/007i4MEmgy1g0m7ef7903j304c056gli.jpg",
       reblogNumber: 99999,
       commentNumber: 99999,
       starNumber: 99999,
       from: "iPhone客户端",
-      time: "2020-12-12 12:12",
-      content: "Vue3.0今天正式发布！",
+      time: "1912-11-06 14:31",
+      content: "任何有脑子的中国人，都应该对网上的截图保持怀疑！",
       canvas: ""
     };
   },
@@ -129,9 +129,9 @@ export default {
       }
       dom.appendChild(this.canvas);
       const ctx = this.canvas.getContext("2d");
-      ctx.font = "20px microsoft yahei";
-      ctx.fillStyle = "#DDDDDD";
-      ctx.fillText("https://fakes.netlify.com", 300, 25);
+      ctx.font = "15px microsoft yahei";
+      ctx.fillStyle = "rgba(221,221,221,0.9)";
+      ctx.fillText("什么是真相？https://fakes.netlify.com", 100, 75);
     },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
