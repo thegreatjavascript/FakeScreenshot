@@ -28,10 +28,6 @@ module.exports = {
       '@': resolve('src')
     }
   },
-  modules: [
-    resolve('src'),
-    resolve('node_modules')
-  ],
   module: {
     rules: [
       {
