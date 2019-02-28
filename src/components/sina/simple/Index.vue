@@ -194,7 +194,7 @@ export default {
           .toDataURL("image/png")
           .replace("image/png", "image/octet-stream");
       }
-      download.setAttribute("href", image.src);
+
     }
   }
 };
