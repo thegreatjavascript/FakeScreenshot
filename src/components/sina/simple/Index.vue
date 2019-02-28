@@ -3,6 +3,9 @@
     <div class='toolbar'>
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
+      <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
+        <el-button type="info" icon='el-icon-success' size="medium"  plain>添加图片</el-button>
+      </el-upload>
     </div>
     <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
       <div id='image-container'>
@@ -40,7 +43,7 @@
         </div>
         <div id="DIV_14">
           <div id="DIV_15">
-            <el-upload v-if='edit' class="avatar-uploader" action='' :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+            <el-upload v-if='edit' class="avatar-uploader"  action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
               <img v-if="avatar" :src="avatar" class="avatar">
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
@@ -58,6 +61,7 @@
           </div>
           <div id="DIV_27" v-html= 'content'  :contenteditable="edit" @input="changeContent">
           </div>
+
         </div>
         <div id="DIV_35">
           <div id="DIV_36">
@@ -78,7 +82,7 @@
             </li>
             <li id="LI_69">
               <!--cuslike用于前端判断是否显示个性赞，1:显示-->
-              <span  title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
+              <span  title="赞" id="A_70" ><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73" ><em id="EM_74" >ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
             </li>
           </ul>
         </div>
@@ -109,7 +113,9 @@ export default {
       content: "Vue3.0今天正式发布！",
       canvas: "",
       mentionPerson: '',
-      isMentioned: false
+      isMentioned: false,
+      picture:'',
+      imageUrl: '',
     }
   },
   methods: {
@@ -139,10 +145,13 @@ export default {
       });
     },
     generageScreenShot() {
-      html2canvas(document.querySelector("#DIV_1"), {allowTaint:true, useCORS: true}).then(
+      let screenShot = document.querySelector("#DIV_1");
+      let width = screenShot.offsetWidth;
+      let height = screenShot.offsetHeight;
+      html2canvas(screenShot, {allowTaint:true, useCORS: true, height:height , width:width}).then(
         canvas => {
-          this.dialogVisible = true;
           this.canvas = canvas;
+          this.dialogVisible = true;
         }
       );
     },
@@ -165,6 +174,21 @@ export default {
         this.avatar = res;
       });
       return true;
+    },
+    handlePicSuccess(res, file) {
+      this.picture = URL.createObjectURL(file.raw);
+      console.log(this.picture)
+    },
+    beforePicUpload(file) {
+      this.getBase64(file).then(res => {
+        this.picture = res;
+        let image = new Image(167);
+        image.src = this.picture;
+        console.log(image.width);
+        console.log(image.height)
+        document.getElementById('DIV_27').appendChild(image)
+        image.style = "display:block"
+      });
     },
     download() {
       let download = document.getElementById("download");
