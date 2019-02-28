@@ -180,19 +180,21 @@ export default {
         this.picture = res;
         let image = new Image(167);
         image.src = this.picture;
-        console.log(image.width);
-        console.log(image.height)
-        document.getElementById('DIV_27').appendChild(image)
-        image.style = "display:block"
+        document.getElementById('DIV_27').appendChild(image);
+        image.style = "display:block";
       });
     },
     download() {
       let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
+      let image = new Image();
+      image.crossOrigin= "anonymous";
+      image.onload=function(){
+        image.src = document
+          .querySelector("canvas")
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+      }
+      download.setAttribute("href", image.src);
     }
   }
 };
