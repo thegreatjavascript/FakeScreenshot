@@ -108,7 +108,7 @@
                         <div class="AuthorInfo AnswerItem-authorInfo AnswerItem-authorInfo--related" itemtype="http://schema.org/Person" itemscope="" itemprop="author">
                           <span class="UserLink AuthorInfo-avatarWrapper">
                             <div class="Popover">
-                              <div id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link" href="" target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></div>
+                              <div id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link"  target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" src='https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67yeqqlj30hs0hsmyt.jpg'></a></div>
                             </div>
                           </span>
                           <div class="AuthorInfo-content">
@@ -235,22 +235,22 @@
                     </div>
                     <div class="Card-section SimilarQuestions-list">
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"61647906"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有没有什么有含义的网名？</a> 8 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有没有什么有含义的网名？</a> 8 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"287909511"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">取过什么惊艳的网名？</a> 3 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">取过什么惊艳的网名？</a> 3 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"59142292"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有没有很好听的网名？</a> 111 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有没有很好听的网名？</a> 111 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"58213013"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">有什么好听的网名吗？</a> 6 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">有什么好听的网名吗？</a> 6 个回答</div>
                       <div class="SimilarQuestions-item" itemtype="http://schema.org/Question" itemscope="" itemprop="zhihu:similarQuestion" data-za-detail-view-path-module="QuestionItem" data-za-extra-module='{"card":{"content":{"type":"Question","token":"47274584"}}}'>
-                        <a class="Button Button--plain" href="" target="_blank" type="button">是否有自己多年不想更换的、有故事的网名昵称等？</a> 12 个回答</div>
+                        <a class="Button Button--plain"  target="_blank" type="button">是否有自己多年不想更换的、有故事的网名昵称等？</a> 12 个回答</div>
                     </div>
                   </div>
                   <div class="Card" data-za-detail-view-path-module="ContentList" data-za-extra-module='{"card":{"content":null}}' data-za-detail-view-path-module_name="相关推荐">
                     <div class="Card-header RelatedCommodities-title">
                       <div class="Card-headerText">相关推荐</div>
                     </div>
-                    <div class="Card-section RelatedCommodities-list"><a class="Button RelatedCommodities-item Button--plain" href="" target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67d7e5yj306y043glk.jpg">
+                    <div class="Card-section RelatedCommodities-list"><a class="Button RelatedCommodities-item Button--plain"  target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007i4MEmgy1g0m67d7e5yj306y043glk.jpg">
                         <div class="RelatedCommodities-content">
                           <div class="RelatedCommodities-subject RelatedCommodities-subject-two">管清友教你 2019 年怎么投？穿越经济周期的投资课</div>
                           <div class="RelatedCommodities-meta">
@@ -259,7 +259,7 @@
                             </div>
                           </div>
                         </div>
-                      </a><a class="Button RelatedCommodities-item Button--plain" href="" target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007iUjdily1g0m63srboej306y099aaj.jpg">
+                      </a><a class="Button RelatedCommodities-item Button--plain"  target="_blank" type="button"><img class="RelatedCommodities-image" alt="live" src="https://ww1.sinaimg.cn/large/007iUjdily1g0m63srboej306y099aaj.jpg">
                         <div class="RelatedCommodities-content">
                           <div class="RelatedCommodities-subject" data-tooltip="我们为什么上班？">我们为什么上班？</div>
                           <div class="RelatedCommodities-description">张佳玮</div>
@@ -359,10 +359,6 @@ export default {
         dom.removeChild(dom.childNodes[0]);
       }
       dom.appendChild(this.canvas);
-      const ctx = this.canvas.getContext("2d");
-      ctx.font = "20px microsoft yahei";
-      ctx.fillStyle = "rgba(221,221,221,0.9)";
-      ctx.fillText("什么是真相？https://fakes.netlify.com", 500, 300);
     },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
