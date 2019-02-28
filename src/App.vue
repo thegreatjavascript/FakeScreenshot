@@ -2,7 +2,8 @@
   <div id="app">
     <el-card class='tab-bar'>
       <el-button size="medium" @click='route("/")' plain>微博</el-button>
-      <el-button size="medium" @click='route("zhihu")' plain>知乎</el-button>
+      <el-button size="medium" @click='route("/zhihu")' plain>知乎</el-button>
+      <el-button size="medium" @click='route("/douban")' plain>豆瓣</el-button>
     </el-card>
     <router-view />
   </div>

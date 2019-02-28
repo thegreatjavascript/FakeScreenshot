@@ -14,6 +14,27 @@ export default new Router({
       path: '/zhihu',
       name: 'zhihusimple',
       component: () => import('@/components/zhihu/simple')
+    },
+    {
+      path: '/douban/',
+      name: 'douban',
+      component: () => import('@/components/douban/Index.vue'),
+      children: [
+        {
+          path: '/',
+          redirect: 'movie'
+        },
+        {
+          path: 'movie',
+          name: 'movie',
+          component: () => import('@/components/douban/movie/Index.vue')
+        },
+        {
+          path: 'note',
+          name: 'note',
+          component: () => import('@/components/douban/note/Index.vue')
+        }
+      ]
     }
   ]
 })
