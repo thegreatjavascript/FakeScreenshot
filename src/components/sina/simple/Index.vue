@@ -4,7 +4,7 @@
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
       <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
-        <el-button type="info" icon='el-icon-success' size="medium"  plain>添加图片</el-button>
+        <el-button type="info" icon='el-icon-success' size="medium" plain>添加图片</el-button>
       </el-upload>
     </div>
     <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
@@ -16,9 +16,9 @@
         </a>
       </span>
     </el-dialog>
-    <el-dialog title="" :visible.sync = "isMentioned">
+    <el-dialog title="" :visible.sync="isMentioned">
       <div>
-        <el-input autofocus title="@someon" placeholder="输入用户名" v-model = "mentionPerson" @keyup.enter.native="getMention">
+        <el-input autofocus title="@someon" placeholder="输入用户名" v-model="mentionPerson" @keyup.enter.native="getMention">
           <template slot="prepend">@</template>
         </el-input>
         <el-button @click="getMention" style="margin-left:40%;margin-top:20px">确定</el-button>
@@ -43,7 +43,7 @@
         </div>
         <div id="DIV_14">
           <div id="DIV_15">
-            <el-upload v-if='edit' class="avatar-uploader"  action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+            <el-upload v-if='edit' class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
               <img v-if="avatar" :src="avatar" class="avatar">
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
@@ -52,14 +52,15 @@
         </div>
         <div id="DIV_18">
           <div id="DIV_19">
-            <a href="" id="A_20" v-html='nickname' :contenteditable="edit"></a> <a title="微博会员" href="http://vip.weibo.com/personal?from=main" id="A_21"><em id="EM_22"></em></a><div id="watermark">什么是真相？https://fakes.netlify.com</div>
+            <a href="" id="A_20" v-html='nickname' :contenteditable="edit"></a> <a title="微博会员" href="http://vip.weibo.com/personal?from=main" id="A_21"><em id="EM_22"></em></a>
+            <div id="watermark">什么是真相？https://fakes.netlify.com</div>
           </div>
           <div id="DIV_23">
             <a name="4316491173741841" href="/6423850204/H6V0FfHqh?from=page_1005056423850204_profile&amp;wvr=6&amp;mod=weibotime" :contenteditable="edit" v-html='time' id="A_24"></a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed" id="A_25" :contenteditable="edit" v-html='from'></a>
           </div>
           <div id="DIV_26">
           </div>
-          <div id="DIV_27" v-html= 'content'  :contenteditable="edit" @input="changeContent">
+          <div id="DIV_27" v-html='content' :contenteditable="edit" @input="changeContent">
           </div>
 
         </div>
@@ -72,17 +73,17 @@
         <div id="DIV_38">
           <ul id="UL_39">
             <li id="LI_40">
-              <span  id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></span>
+              <span id="A_41"><span id="SPAN_42"><span id="SPAN_43"><span id="SPAN_44"><em id="EM_45">û</em><em id="EM_46">收藏</em></span></span></span></span>
             </li>
             <li id="LI_47">
-              <span  id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></span> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
+              <span id="A_48"><span id="SPAN_49"><span id="SPAN_50"><span id="SPAN_51"><em id="EM_52"></em><em id="EM_53" :contenteditable="edit" v-html='reblogNumber'></em></span></span></span></span> <span id="SPAN_54"><span id="SPAN_55"><i id="I_56"></i><em id="EM_57"></em></span></span>
             </li>
             <li id="LI_58">
-              <span  id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></span> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
+              <span id="A_59"><span id="SPAN_60"><span id="SPAN_61"><span id="SPAN_62"><em id="EM_63"></em><em id="EM_64" :contenteditable="edit" v-html='commentNumber'></em></span></span></span></span> <span id="SPAN_65"><span id="SPAN_66"><i id="I_67"></i><em id="EM_68"></em></span></span>
             </li>
             <li id="LI_69">
               <!--cuslike用于前端判断是否显示个性赞，1:显示-->
-              <span  title="赞" id="A_70" ><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73" ><em id="EM_74" >ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
+              <span title="赞" id="A_70"><span id="SPAN_71"><span id="SPAN_72"> <span id="SPAN_73"><em id="EM_74">ñ</em><em id="EM_75" :contenteditable="edit" v-html='starNumber'></em></span></span></span></span> <span id="SPAN_76"><span id="SPAN_77"><i id="I_78"></i><em id="EM_79"></em></span></span>
             </li>
           </ul>
         </div>
@@ -95,6 +96,7 @@
 
 <script>
 import html2canvas from "html2canvas";
+import json from "./image.json";
 
 export default {
   name: "SinaSimple",
@@ -103,8 +105,7 @@ export default {
       dialogVisible: false,
       edit: false,
       nickname: "鲁迅",
-      avatar:
-        "https://ww1.sinaimg.cn/large/007i4MEmgy1g0m7ef7903j304c056gli.jpg",
+      avatar: json.avatar,
       reblogNumber: 99999,
       commentNumber: 99999,
       starNumber: 99999,
@@ -112,25 +113,32 @@ export default {
       time: "1912-11-06 14:31",
       content: "任何有脑子的中国人，都应该对网上的截图保持怀疑！",
       canvas: "",
-      mentionPerson: '',
+      mentionPerson: "",
       isMentioned: false,
-      picture:'',
-      imageUrl: '',
-    }
+      picture: "",
+      imageUrl: ""
+    };
   },
   methods: {
     getMention() {
-      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML.slice(0,document.querySelector("#DIV_27").innerHTML.length-1);
-      document.querySelector("#DIV_27").innerHTML = document.querySelector("#DIV_27").innerHTML + `<span style="color:#eb7350">@${this.mentionPerson}</span>&nbsp;`
-      this.mentionPerson = '';
+      document.querySelector("#DIV_27").innerHTML = document
+        .querySelector("#DIV_27")
+        .innerHTML.slice(
+          0,
+          document.querySelector("#DIV_27").innerHTML.length - 1
+        );
+      document.querySelector("#DIV_27").innerHTML =
+        document.querySelector("#DIV_27").innerHTML +
+        `<span style="color:#eb7350">@${this.mentionPerson}</span>&nbsp;`;
+      this.mentionPerson = "";
       this.isMentioned = false;
     },
     changeContent(e) {
       //不能直接绑定到content,否则会导致光标位置错误！
       //也无法使用v-model绑定
       let contentText = e.target.innerHTML;
-      if(contentText.slice('')[contentText.length-1]==='@'){
-          this.isMentioned = true;
+      if (contentText.slice("")[contentText.length - 1] === "@") {
+        this.isMentioned = true;
       }
     },
     changeMode() {
@@ -148,12 +156,15 @@ export default {
       let screenShot = document.querySelector("#DIV_1");
       let width = screenShot.offsetWidth;
       let height = screenShot.offsetHeight;
-      html2canvas(screenShot, {allowTaint:true, useCORS: true, height:height , width:width}).then(
-        canvas => {
-          this.canvas = canvas;
-          this.dialogVisible = true;
-        }
-      );
+      html2canvas(screenShot, {
+        allowTaint: true,
+        useCORS: true,
+        height: height,
+        width: width
+      }).then(canvas => {
+        this.canvas = canvas;
+        this.dialogVisible = true;
+      });
     },
     showImage() {
       const dom = document.querySelector("#image-container");
@@ -173,28 +184,23 @@ export default {
     },
     handlePicSuccess(res, file) {
       this.picture = URL.createObjectURL(file.raw);
-      console.log(this.picture)
     },
     beforePicUpload(file) {
       this.getBase64(file).then(res => {
         this.picture = res;
         let image = new Image(167);
         image.src = this.picture;
-        document.getElementById('DIV_27').appendChild(image);
+        document.getElementById("DIV_27").appendChild(image);
         image.style = "display:block";
       });
     },
     download() {
       let download = document.getElementById("download");
-      let image = new Image();
-      image.crossOrigin= "anonymous";
-      image.onload=function(){
-        image.src = document
-          .querySelector("canvas")
-          .toDataURL("image/png")
-          .replace("image/png", "image/octet-stream");
-      }
-      download.setAttribute("href", image.src);
+      let image = document
+        .querySelector("canvas")
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      download.setAttribute("href", image);
     }
   }
 };
@@ -246,12 +252,12 @@ export default {
   align-items: center;
 }
 #watermark {
-  color:rgba(221,221,221,0.9);
-  font-family:  microsoft yahei;
-  font-size:10px;
+  color: rgba(221, 221, 221, 0.9);
+  font-family: microsoft yahei;
+  font-size: 10px;
   transform: rotate(180deg);
-  position:absolute;
-  bottom:80px;
-  left:50px
+  position: absolute;
+  bottom: 80px;
+  left: 50px;
 }
 </style>
