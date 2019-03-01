@@ -333,8 +333,13 @@ export default {
       });
     },
     generageScreenShot() {
+      let screenShot = document.querySelector("#page-container");
+      let width = screenShot.offsetWidth;
+      let height = screenShot.offsetHeight;
       html2canvas(document.querySelector("#page-container"), {
         allowTaint: true,
+        height: height,
+        width: width,
         onclone: element => {
           const svgElements = element.body
             .querySelector("#page-container")
