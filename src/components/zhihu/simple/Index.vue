@@ -375,15 +375,11 @@ export default {
     },
     download() {
       let download = document.getElementById("download");
-      let image = new Image();
-      image.crossOrigin = "anonymous";
-      image.onload = function() {
-        image.src = document
-          .querySelector("canvas")
-          .toDataURL("image/png")
-          .replace("image/png", "image/octet-stream");
-      };
-      download.setAttribute("href", image.src);
+      let image = document
+        .querySelector("canvas")
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      download.setAttribute("href", image);
     }
   }
 };
