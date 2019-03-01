@@ -338,6 +338,7 @@ button:not(.toolbar button) {
 	border-radius: 2px;
 }
 .Question-mainColumn {
+	position: relative;
 	width: 694px;
 	padding-bottom: 20px;
 }

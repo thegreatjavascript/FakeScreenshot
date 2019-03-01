@@ -100,6 +100,7 @@
           <div class="Question-main">
             <div class="ListShortcut">
               <div class="Question-mainColumn" data-zop-questionanswerlist="true">
+                <div id="watermark">什么是真相？fakes.netlify.com</div>
                 <div class="Card ViewAll" data-za-detail-view-path-module="MessageItem" data-za-extra-module='{"card":{"content":{"item_num":1631}}}'><a class="QuestionMainAction ViewAll-QuestionMainAction" data-za-detail-view-element_name="ViewAll">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
                 <div class="Card AnswerCard">
                   <div tabindex="-1" class="QuestionAnswer-content">
@@ -108,7 +109,11 @@
                         <div class="AuthorInfo AnswerItem-authorInfo AnswerItem-authorInfo--related" itemtype="http://schema.org/Person" itemscope="" itemprop="author">
                           <span class="UserLink AuthorInfo-avatarWrapper">
                             <div class="Popover">
-                              <div id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" :src='avatar'></a></div>
+                              <el-upload v-if='edit' class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                                <img v-if="avatar" :src="avatar" class="avatar">
+                                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                              </el-upload>
+                              <div v-else id="Popover7-toggle" aria-expanded="false" aria-haspopup="true" aria-owns="Popover7-content"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User"><img width="38" height="38" class="Avatar AuthorInfo-avatar" alt="对抗假截图" :src='avatar'></a></div>
                             </div>
                           </span>
                           <div class="AuthorInfo-content">
@@ -166,7 +171,11 @@
                     </div>
                     <div class="Card-section">
                       <div class="AnswerAuthor-user">
-                        <div class="AnswerAuthor-user-avatar"><span class="UserLink"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User"><img width="60" height="60" class="Avatar Avatar--large UserLink-avatar" alt="对抗假截图" :src='avatar'></a></span></div>
+                        <el-upload v-if='edit' class="avatar-uploader-2" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                          <img v-if="avatar" :src="avatar" class="avatar">
+                          <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                        </el-upload>
+                        <div v-else class="AnswerAuthor-user-avatar"><span class="UserLink"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User"><img width="60" height="60" class="Avatar Avatar--large UserLink-avatar" alt="对抗假截图" :src='avatar'></a></span></div>
                         <div class="AnswerAuthor-user-content">
                           <div class="AnswerAuthor-user-name"><span class="UserLink"><a class="UserLink-link" target="_blank" data-za-detail-view-element_name="User">对抗假截图</a></span></div>
                           <div class="AnswerAuthor-user-headline">
@@ -316,7 +325,8 @@ export default {
       collectionNumber: "99,999",
       from: "iPhone客户端",
       time: "2019-02-24",
-      content: "项目的意义",
+      content:
+        "我给自己建起了一座 非手造的纪念碑 人民走向那里的小径 永远不会荒芜 它将自己坚定不屈的头颅 高高扬起 高过亚历山大的石柱 不 我绝不会死去 心活在神圣的竖琴中 它将比我的骨灰活得更久 不会消亡 只要在这个月照的世界上 还有一个诗人 我的名声就会传扬 整个伟大的俄罗斯都会 听到我的传闻 各种各样的语言 都会呼唤我的姓名 无论骄傲的斯拉夫人的子孙 还是芬兰人 山野的通古斯人 卡尔梅克人 我将长时期地受到人民的尊敬 和爱戴 因为我用竖琴唤起了 人们善良的感情 因为我歌颂过自由 在我的残酷的时代 我还曾为死者呼吁同情 啊我的缪斯 你要听从上天的吩咐 既不怕受人欺侮 也不希求什么桂冠 什么诽谤什么赞扬 一概视若粪土",
       canvas: ""
     };
   },
@@ -391,30 +401,65 @@ export default {
 </script>
 
 <style scoped src='./Index.css'></style>
-<style>
-.avatar-uploader .el-upload {
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+<style lang='scss'>
+.avatar-uploader {
+  .el-upload {
+    border: 1px dashed #d9d9d9;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .el-upload:hover {
+    border-color: #409eff;
+  }
+  .el-upload:hover {
+    border-color: #409eff;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+  }
+  .avatar {
+    width: 38px;
+    height: 38px;
+    display: block;
+  }
 }
-.avatar-uploader .el-upload:hover {
-  border-color: #409eff;
+
+.avatar-uploader-2 {
+  margin-right: 12px;
+
+  .el-upload {
+    border: 1px dashed #d9d9d9;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .el-upload:hover {
+    border-color: #409eff;
+  }
+  .el-upload:hover {
+    border-color: #409eff;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
 }
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-}
-.avatar {
-  width: 45px;
-  height: 45px;
-  display: block;
-}
+
 canvas {
   transform: scale(0.9);
 }
@@ -443,5 +488,16 @@ canvas {
     align-items: center;
     padding: 20px;
   }
+}
+
+#watermark {
+  color: rgba(245, 108, 108, 0.5);
+  font-family: microsoft yahei;
+  font-size: 30px;
+  font-weight: bold;
+  transform: rotate(170deg);
+  position: absolute;
+  top: 200px;
+  left: 200px;
 }
 </style>

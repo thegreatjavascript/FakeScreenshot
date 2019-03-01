@@ -145,6 +145,7 @@
                 <div id="DIV_95">
                 </div>
                 <div id="DIV_96">
+                  <div id="watermark">什么是真相？fakes.netlify.com</div>
                   <div id="DIV_97" :contenteditable="edit" v-html='content'>
                   </div>
                   <div id="DIV_111">
@@ -460,6 +461,16 @@ canvas {
     align-items: center;
     padding: 20px;
   }
+}
+#watermark {
+  color: rgba(245, 108, 108, 0.5);
+  font-family: microsoft yahei;
+  font-size: 30px;
+  font-weight: bold;
+  transform: rotate(170deg);
+  position: absolute;
+  bottom: 80px;
+  left: 500px;
 }
 </style>
 
