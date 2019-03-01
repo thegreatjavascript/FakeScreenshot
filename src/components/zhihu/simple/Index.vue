@@ -109,7 +109,7 @@
                         <div class="AuthorInfo AnswerItem-authorInfo AnswerItem-authorInfo--related" itemtype="http://schema.org/Person" itemscope="" itemprop="author">
                           <span class="UserLink AuthorInfo-avatarWrapper">
                             <div class="Popover">
-                              <el-upload v-if='edit' class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                              <el-upload v-if='edit' class="avatar-uploader-zhihu-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
                                 <img v-if="avatar" :src="avatar" class="avatar">
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                               </el-upload>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="Card-section">
                       <div class="AnswerAuthor-user">
-                        <el-upload v-if='edit' class="avatar-uploader-2" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                        <el-upload v-if='edit' class="avatar-uploader-zhihu-simple-2" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
                           <img v-if="avatar" :src="avatar" class="avatar">
                           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                         </el-upload>
@@ -402,7 +402,7 @@ export default {
 
 <style scoped src='./Index.css'></style>
 <style lang='scss'>
-.avatar-uploader {
+.avatar-uploader-zhihu-simple {
   .el-upload {
     border: 1px dashed #d9d9d9;
     cursor: pointer;
@@ -430,7 +430,7 @@ export default {
   }
 }
 
-.avatar-uploader-2 {
+.avatar-uploader-zhiohu-simple-2 {
   margin-right: 12px;
 
   .el-upload {

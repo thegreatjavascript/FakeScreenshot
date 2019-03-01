@@ -134,7 +134,7 @@
                   <h1 id="H1_89" :contenteditable="edit" v-html='title'>
                   </h1>
                   <div id="DIV_90">
-                    <el-upload v-if='edit' class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                    <el-upload v-if='edit' class="avatar-uploader-douban-note" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
                       <img v-if="avatar" :src="avatar" class="avatar">
                       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
@@ -376,7 +376,7 @@ export default {
 
 <style scoped src='./Index.css'></style>
 <style lang='scss'>
-.avatar-uploader {
+.avatar-uploader-douban-note {
   height: 26px;
   .el-upload {
     border: 1px dashed #d9d9d9;

@@ -43,7 +43,7 @@
         </div>
         <div id="DIV_14">
           <div id="DIV_15">
-            <el-upload v-if='edit' class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+            <el-upload v-if='edit' class="avatar-uploader-sina-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
               <img v-if="avatar" :src="avatar" class="avatar">
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
@@ -207,29 +207,31 @@ export default {
 </script>
 
 <style scoped src='./Index.css'></style>
-<style>
-.avatar-uploader .el-upload {
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.avatar-uploader .el-upload:hover {
-  border-color: #409eff;
-}
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-}
-.avatar {
-  width: 45px;
-  height: 45px;
-  display: block;
+<style lang='scss'>
+.avatar-uploader-sina-simple {
+  .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409eff;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+  }
+  .avatar {
+    width: 45px;
+    height: 45px;
+    display: block;
+  }
 }
 </style>
 <style scoped lang='scss'>
@@ -252,7 +254,7 @@ export default {
   align-items: center;
 }
 #watermark {
- color: rgba(245, 108, 108, 0.2);
+  color: rgba(245, 108, 108, 0.2);
   font-family: microsoft yahei;
   // font-size: 15px;
   transform: rotate(180deg);

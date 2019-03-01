@@ -10,11 +10,11 @@ export default new Router({
       name: 'sinasimple',
       component: () => import('@/components/sina/simple')
     },
-    {
-      path: '/zhihu',
-      name: 'zhihusimple',
-      component: () => import('@/components/zhihu/simple')
-    },
+    // {
+    //   path: '/zhihu',
+    //   name: 'zhihusimple',
+    //   component: () => import('@/components/zhihu/simple')
+    // },
     {
       path: '/douban/',
       name: 'douban',
@@ -22,7 +22,7 @@ export default new Router({
       children: [
         {
           path: '/',
-          redirect: 'movie'
+          redirect: 'note'
         },
         {
           path: 'movie',
