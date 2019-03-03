@@ -53,10 +53,10 @@
         <div id="DIV_18">
           <div id="DIV_19">
             <a href="" id="A_20" v-html='nickname' :contenteditable="edit"></a> <a title="微博会员" href="http://vip.weibo.com/personal?from=main" id="A_21"><em id="EM_22"></em></a>
-            <div id="watermark">什么是真相？fakes.netlify.com</div>
           </div>
           <div id="DIV_23">
-            <a name="4316491173741841" href="/6423850204/H6V0FfHqh?from=page_1005056423850204_profile&amp;wvr=6&amp;mod=weibotime" :contenteditable="edit" v-html='time' id="A_24"></a> 来自 <a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed" id="A_25" :contenteditable="edit" v-html='from'></a>
+            <a name="4316491173741841" href="/6423850204/H6V0FfHqh?from=page_1005056423850204_profile&amp;wvr=6&amp;mod=weibotime" :contenteditable="edit" v-html='time' id="A_24"></a>&nbsp;来自&nbsp;<a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed" id="A_25" :contenteditable="edit" v-html='from'></a>
+            <div id="watermark">什么是真相？fakes.netlify.com</div>
           </div>
           <div id="DIV_26">
           </div>
@@ -254,12 +254,6 @@ export default {
   align-items: center;
 }
 #watermark {
-  color: rgba(245, 108, 108, 0.2);
-  font-family: microsoft yahei;
-  // font-size: 15px;
   transform: rotate(180deg);
-  position: absolute;
-  bottom: 70px;
-  left: 50px;
 }
 </style>

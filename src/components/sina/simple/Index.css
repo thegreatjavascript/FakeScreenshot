@@ -804,6 +804,7 @@
     "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin: 0px 0px 2px;
   outline: rgb(128, 128, 128) none 0px;
+  display: flex;
 } /*#DIV_23*/
 
 #DIV_23:after {

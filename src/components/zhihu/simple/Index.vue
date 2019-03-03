@@ -4,7 +4,7 @@
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
     </div>
-    <el-dialog class='dialog-container' title="" :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
+    <el-dialog class='dialog-container'  :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
       <div id='image-container'>
       </div>
       <span slot="footer" class="dialog-footer">
@@ -100,7 +100,6 @@
           <div class="Question-main">
             <div class="ListShortcut">
               <div class="Question-mainColumn">
-                <div id="watermark">什么是真相？fakes.netlify.com</div>
                 <div class="Card ViewAll"><a class="QuestionMainAction ViewAll-QuestionMainAction">查看全部 <span :contenteditable='edit' v-html='totalAnswers'></span> 个回答</a></div>
                 <div class="Card AnswerCard">
                   <div tabindex="-1" class="QuestionAnswer-content">
@@ -137,6 +136,7 @@
                           </span></div>
                         <div>
                           <div class="ContentItem-time"><a target="_blank"><span>编辑于 <span :contenteditable='edit' v-html='time'></span></span></a></div>
+                          <div class="watermark">什么是真相？fakes.netlify.com</div>
                         </div>
                         <div>
                           <div class="ContentItem-actions Sticky RichContent-actions is-bottom"><span><button class="Button VoteButton VoteButton--up" aria-label="赞同" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--TriangleUp VoteButton-TriangleUp" fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
@@ -189,15 +189,15 @@
                       <div class="AnswerAuthor-counts">
                         <div class="NumberBoard"><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">回答</div><strong title="14" class="NumberBoard-itemValue" :contenteditable='edit' v-html='answerNumber'></strong>
+                              <div class="NumberBoard-itemName">回答</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='answerNumber'></strong>
                             </div>
                           </a><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">文章</div><strong title="0" class="NumberBoard-itemValue" :contenteditable='edit' v-html='articleNumber'></strong>
+                              <div class="NumberBoard-itemName">文章</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='articleNumber'></strong>
                             </div>
                           </a><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">关注者</div><strong title="809" class="NumberBoard-itemValue" :contenteditable='edit' v-html='followerNumber'></strong>
+                              <div class="NumberBoard-itemName">关注者</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='followerNumber'></strong>
                             </div>
                           </a></div>
                       </div>
@@ -212,27 +212,27 @@
                     </div>
                     <div class="Card-section AnswerInfo-favlists">
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a title="有趣的回答" class="Button Button--plain" target="_blank" type="button">有趣的回答</a></div>
+                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">有趣的回答</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">19,365 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a title="浩瀚的宇宙和漫漫的浮生" class="Button Button--plain" target="_blank" type="button">浩瀚的宇宙和漫漫的浮生</a></div>
+                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">浩瀚的宇宙和漫漫的浮生</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">海蒲</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">5,338 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a title="watch later" class="Button Button--plain" target="_blank" type="button">watch later</a></div>
+                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">watch later</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">丁鹄儒</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">1,417 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a title="马克" class="Button Button--plain" target="_blank" type="button">马克</a></div>
+                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">马克</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">236 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a title="感兴趣的有用的" class="Button Button--plain" target="_blank" type="button">感兴趣的有用的</a></div>
+                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">感兴趣的有用的</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">傻傻</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">119 人关注</div>
                       </div>
@@ -430,7 +430,7 @@ export default {
   }
 }
 
-.avatar-uploader-zhiohu-simple-2 {
+.avatar-uploader-zhihu-simple-2 {
   margin-right: 12px;
 
   .el-upload {
@@ -490,14 +490,10 @@ canvas {
   }
 }
 
-#watermark {
-  color: rgba(245, 108, 108, 0.5);
-  font-family: microsoft yahei;
-  font-size: 30px;
-  font-weight: bold;
-  transform: rotate(170deg);
-  position: absolute;
-  top: 200px;
-  left: 200px;
+.watermark {
+  transform: rotate(180deg);
+  color: #8590a6;
+  font-size: 14px;
+  text-align:right;
 }
 </style>

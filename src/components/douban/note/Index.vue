@@ -140,12 +140,12 @@
                     </el-upload>
                     <a v-else href="" id="A_91"><img width="24" height="24" :src='avatar' id="IMG_92" /></a>
                     <a href="" id="A_93" :contenteditable="edit" v-html='nickname'></a> <span id="SPAN_94" :contenteditable="edit" v-html='time'></span>
+                    <div class='watermark'>什么是真相？fakes.netlify.com</div>
                   </div>
                 </div>
                 <div id="DIV_95">
                 </div>
                 <div id="DIV_96">
-                  <div id="watermark">什么是真相？fakes.netlify.com</div>
                   <div id="DIV_97" :contenteditable="edit" v-html='content'>
                   </div>
                   <div id="DIV_111">
@@ -240,7 +240,7 @@
                     <a href="https://www.douban.com/gallery/topic/55558/?from=hot_topic_note" id="A_187">尝一口就印象深刻的食物</a> <span id="SPAN_188">40376人浏览</span>
                   </li>
                   <li id="LI_189">
-                    <a href="https://www.douban.com/gallery/topic/14229/?from=hot_topic_note" id="A_190">属于夏天的电影</a> <span id="SPAN_191">新话题 · 297797人浏览</span>
+                    <a href="https://www.douban.com/gallery/topic/14229/?from=hot_topic_note" id="A_190" class='watermark'>什么是真相？fakes.netlify.com</a> <span id="SPAN_191">新话题 · 297797人浏览</span>
                   </li>
                 </ul>
               </div>
@@ -462,15 +462,10 @@ canvas {
     padding: 20px;
   }
 }
-#watermark {
-  color: rgba(245, 108, 108, 0.5);
-  font-family: microsoft yahei;
-  font-size: 30px;
-  font-weight: bold;
-  transform: rotate(170deg);
-  position: absolute;
-  bottom: 80px;
-  left: 500px;
+.watermark {
+  transform: rotate(180deg);
+  color: rgb(153, 153, 153);
+  margin-left: 10px;
 }
 </style>
 

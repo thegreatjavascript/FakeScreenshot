@@ -6,6 +6,7 @@
       <el-button size="medium" @click='route("/douban")' plain>豆瓣</el-button>
     </el-card>
     <router-view />
+    <iframe src="https://ghbtns.com/github-btn.html?user=thegreatjavascript&repo=FakeScreenshot&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
   </div>
 </template>
 
@@ -22,8 +23,10 @@ export default {
 
 <style lang='scss' scoped>
 #app {
-  margin: auto;
   margin-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   > .tab-bar {
     display: flex;
     justify-content: center;
@@ -31,6 +34,9 @@ export default {
     margin: auto;
     padding: 0 100px;
     margin-bottom: 50px;
+  }
+  iframe {
+    margin: 20px 0;
   }
 }
 </style>
