@@ -7,11 +7,11 @@
 
 ------
 
-**须知：** 参与开发需要你了解基本`Git`技能（关键词：Git分支、提交Merge Request）
+**须知：** 参与开发需要你了解基本`Git`技能（关键词：Git分支、提交Pull Request）
 
 1. 联系我加入Organization：TheGreatJavaScript
 2. 新建分支：以你的Github名称来命名
-3. 开发：在你的分支开发，然后发起Merge Request
+3. 开发：在你的分支开发，然后发起Pull Request
 
 项目开发群：792410430 （仅限已经或者将要为项目**贡献代码**的开发者加入！）
 
@@ -125,5 +125,5 @@ yarn run dev // or npm run dev
 
 ---
 
-[由Github Projects管理](https://github.com/thegreatjavascript/FakeScreenshot/projects)
 
+[由Github Projects管理](https://github.com/thegreatjavascript/FakeScreenshot/projects)
