@@ -113,7 +113,7 @@
 ```bash
 git clone git@github.com:thegreatjavascript/FakeScreenshot.git
 cd FakeScreenshot
-yarn // or cnpm i
+yarn // or npm install
 yarn run dev // or npm run dev
 ```
 
