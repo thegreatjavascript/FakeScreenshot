@@ -4,7 +4,7 @@
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
     </div>
-    <el-dialog class='dialog-container'  :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
+    <el-dialog class='dialog-container' :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
       <div id='image-container'>
       </div>
       <span slot="footer" class="dialog-footer">
@@ -67,23 +67,19 @@
               <div class="QuestionHeader-footer">
                 <div class="QuestionHeader-footer-inner">
                   <div class="QuestionHeader-main QuestionHeader-footer-main">
-                    <div class="QuestionButtonGroup"><button class="Button FollowButton Button--primary Button--blue" type="button">关注问题</button><button class="Button Button--blue" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="Icon Button-icon Icon--modify" aria-hidden="true" style="width: 14px; height: 16px;" viewBox="0 0 12 12" width="14" height="16">
-                          <title />
-                          <g>
-                            <path fill-rule="evenodd" d="M 0.423 10.32 L 0 12 l 1.667 -0.474 l 1.55 -0.44 l -2.4 -2.33 l -0.394 1.564 Z M 10.153 0.233 c -0.327 -0.318 -0.85 -0.31 -1.17 0.018 l -0.793 0.817 l 2.49 2.414 l 0.792 -0.814 c 0.318 -0.328 0.312 -0.852 -0.017 -1.17 l -1.3 -1.263 Z M 3.84 10.536 L 1.35 8.122 l 6.265 -6.46 l 2.49 2.414 l -6.265 6.46 Z" />
-                          </g>
-                        </svg>写回答</button></div>
-                    <div class="QuestionHeaderActions"><button class="Button Button--grey Button--withIcon Button--withLabel" style="margin-right: 16px;" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Invite Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                            <path fill-rule="evenodd" d="M 4 10 V 8 a 1 1 0 1 1 2 0 v 2 h 2 a 1 1 0 0 1 0 2 H 6 v 2 a 1 1 0 0 1 -2 0 v -2 H 2 a 1 1 0 0 1 0 -2 h 2 Z m 10.455 2 c -2.21 0 -4 -1.79 -4 -4 s 1.79 -4 4 -4 s 4 1.79 4 4 s -1.79 4 -4 4 Z m -7 6 c 0 -2.66 4.845 -4 7.272 -4 C 17.155 14 22 15.34 22 18 v 1.375 c 0 0.345 -0.28 0.625 -0.625 0.625 H 8.08 a 0.625 0.625 0 0 1 -0.625 -0.625 V 18 Z" /></svg></span>邀请回答</button>
-                      <div class="QuestionHeader-Comment"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Comment Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                              <path fill-rule="evenodd" d="M 10.241 19.313 a 0.97 0.97 0 0 0 -0.77 0.2 a 7.908 7.908 0 0 1 -3.772 1.482 a 0.409 0.409 0 0 1 -0.38 -0.637 a 5.825 5.825 0 0 0 1.11 -2.237 a 0.605 0.605 0 0 0 -0.227 -0.59 A 7.935 7.935 0 0 1 3 11.25 C 3 6.7 7.03 3 12 3 s 9 3.7 9 8.25 s -4.373 9.108 -10.759 8.063 Z" /></svg></span><span :contenteditable="edit" v-html='questionCommentNumber'></span> 条评论</button></div>
+                    <div class="QuestionButtonGroup"><button class="Button FollowButton Button--primary Button--blue" type="button">关注问题</button><button class="Button Button--blue" type="button">
+                        <svg-icon icon-name='pen' class-name="Icon Button-icon Icon--modify"></svg-icon>写回答
+                      </button></div>
+                    <div class="QuestionHeaderActions"><button class="Button Button--grey Button--withIcon Button--withLabel" style="margin-right: 16px;" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='user-plus' class-name="Zi Zi--Invite Button-zi"></svg-icon></span>邀请回答</button>
+                      <div class="QuestionHeader-Comment"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='comment' class-name="Zi Zi--Comment Button-zi"></svg-icon></span><span :contenteditable="edit" v-html='questionCommentNumber'></span> 条评论</button></div>
                       <div class="Popover ShareMenu">
-                        <div class="ShareMenu-toggler" id="Popover5-toggle"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Share Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                <path fill-rule="evenodd" d="M 2.931 7.89 c -1.067 0.24 -1.275 1.669 -0.318 2.207 l 5.277 2.908 l 8.168 -4.776 c 0.25 -0.127 0.477 0.198 0.273 0.39 L 9.05 14.66 l 0.927 5.953 c 0.18 1.084 1.593 1.376 2.182 0.456 l 9.644 -15.242 c 0.584 -0.892 -0.212 -2.029 -1.234 -1.796 L 2.93 7.89 Z" /></svg></span>分享</button></div>
-                      </div><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Report Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                            <path fill-rule="evenodd" d="M 19.947 3.129 c -0.633 0.136 -3.927 0.639 -5.697 0.385 c -3.133 -0.45 -4.776 -2.54 -9.949 -0.888 c -0.997 0.413 -1.277 1.038 -1.277 2.019 L 3 20.808 c 0 0.3 0.101 0.54 0.304 0.718 a 0.97 0.97 0 0 0 0.73 0.304 c 0.275 0 0.519 -0.102 0.73 -0.304 c 0.202 -0.179 0.304 -0.418 0.304 -0.718 v -6.58 c 4.533 -1.235 8.047 0.668 8.562 0.864 c 2.343 0.893 5.542 0.008 6.774 -0.657 c 0.397 -0.178 0.596 -0.474 0.596 -0.887 V 3.964 c 0 -0.599 -0.42 -0.972 -1.053 -0.835 Z" /></svg></span>举报</button>
-                      <div class="Popover"><button class="Button Button--plain Button--withIcon Button--iconOnly" id="Popover6-toggle" aria-label="更多" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Dots Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                              <path fill-rule="evenodd" d="M 5 14 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z m 7 0 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z m 7 0 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z" /></svg></span></button></div>
+                        <div class="ShareMenu-toggler" id="Popover5-toggle"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">
+                              <svg-icon icon-name='share' class-name="Zi Zi--Share Button-zi"></svg-icon>
+                            </span>分享</button></div>
+                      </div><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">
+                          <svg-icon icon-name='report' class-name="Zi Zi--Report Button-zi"></svg-icon>
+                        </span>举报</button>
+                      <div class="Popover"><button class="Button Button--plain Button--withIcon Button--iconOnly" id="Popover6-toggle" aria-label="更多" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='more' class-name="Zi Zi--Dots Button-zi"></svg-icon></span></button></div>
                     </div>
                     <div class="QuestionHeader-actions"></div>
                   </div>
@@ -139,18 +135,11 @@
                           <div class="watermark">什么是真相？fakes.netlify.com</div>
                         </div>
                         <div>
-                          <div class="ContentItem-actions Sticky RichContent-actions is-bottom"><span><button class="Button VoteButton VoteButton--up" aria-label="赞同" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--TriangleUp VoteButton-TriangleUp" fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
-                                    <path fill-rule="evenodd" d="M 2 18.242 c 0 -0.326 0.088 -0.532 0.237 -0.896 l 7.98 -13.203 C 10.572 3.57 11.086 3 12 3 c 0.915 0 1.429 0.571 1.784 1.143 l 7.98 13.203 c 0.15 0.364 0.236 0.57 0.236 0.896 c 0 1.386 -0.875 1.9 -1.955 1.9 H 3.955 c -1.08 0 -1.955 -0.517 -1.955 -1.9 Z" /></svg></span>赞同 <span :contenteditable='edit' v-html='votesNumberButton'></span></button><button class="Button VoteButton VoteButton--down" aria-label="反对" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--TriangleDown" fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
-                                    <path fill-rule="evenodd" d="M 20.044 3 H 3.956 C 2.876 3 2 3.517 2 4.9 c 0 0.326 0.087 0.533 0.236 0.896 L 10.216 19 c 0.355 0.571 0.87 1.143 1.784 1.143 s 1.429 -0.572 1.784 -1.143 l 7.98 -13.204 c 0.149 -0.363 0.236 -0.57 0.236 -0.896 c 0 -1.386 -0.876 -1.9 -1.956 -1.9 Z" /></svg></span></button></span><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Comment Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                  <path fill-rule="evenodd" d="M 10.241 19.313 a 0.97 0.97 0 0 0 -0.77 0.2 a 7.908 7.908 0 0 1 -3.772 1.482 a 0.409 0.409 0 0 1 -0.38 -0.637 a 5.825 5.825 0 0 0 1.11 -2.237 a 0.605 0.605 0 0 0 -0.227 -0.59 A 7.935 7.935 0 0 1 3 11.25 C 3 6.7 7.03 3 12 3 s 9 3.7 9 8.25 s -4.373 9.108 -10.759 8.063 Z" /></svg></span><span :contenteditable='edit' v-html='commentNumber'></span> 条评论</button>
+                          <div class="ContentItem-actions Sticky RichContent-actions is-bottom"><span><button class="Button VoteButton VoteButton--up" aria-label="赞同" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='agree' class-name="Zi Zi--TriangleUp VoteButton-TriangleUp"></svg-icon></span>赞同 <span :contenteditable='edit' v-html='votesNumberButton'></span></button><button class="Button VoteButton VoteButton--down" aria-label="反对" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='disagree' class-name="Zi Zi--TriangleDown"></svg-icon></span></button></span><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='comment' class-name="Zi Zi--Comment Button-zi"></svg-icon></span><span :contenteditable='edit' v-html='commentNumber'></span> 条评论</button>
                             <div class="Popover ShareMenu ContentItem-action">
-                              <div class="ShareMenu-toggler" id="Popover33-toggle"><img class="ShareMenu-fakeQRCode" alt="微信二维码" src="https://www.zhihu.com/qrcode?url=https%3A%2F%2Fwww.zhihu.com%2Fanswer%2F587184688%23showWechatShareTip"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Share Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                      <path fill-rule="evenodd" d="M 2.931 7.89 c -1.067 0.24 -1.275 1.669 -0.318 2.207 l 5.277 2.908 l 8.168 -4.776 c 0.25 -0.127 0.477 0.198 0.273 0.39 L 9.05 14.66 l 0.927 5.953 c 0.18 1.084 1.593 1.376 2.182 0.456 l 9.644 -15.242 c 0.584 -0.892 -0.212 -2.029 -1.234 -1.796 L 2.93 7.89 Z" /></svg></span>分享</button></div>
-                            </div><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Star Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                  <path fill-rule="evenodd" d="M 5.515 19.64 l 0.918 -5.355 l -3.89 -3.792 c -0.926 -0.902 -0.639 -1.784 0.64 -1.97 L 8.56 7.74 l 2.404 -4.871 c 0.572 -1.16 1.5 -1.16 2.072 0 L 15.44 7.74 l 5.377 0.782 c 1.28 0.186 1.566 1.068 0.64 1.97 l -3.89 3.793 l 0.918 5.354 c 0.219 1.274 -0.532 1.82 -1.676 1.218 L 12 18.33 l -4.808 2.528 c -1.145 0.602 -1.896 0.056 -1.677 -1.218 Z" /></svg></span>收藏</button><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Heart Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                  <path fill-rule="evenodd" d="M 2 8.437 C 2 5.505 4.294 3.094 7.207 3 C 9.243 3 11.092 4.19 12 6 c 0.823 -1.758 2.649 -3 4.651 -3 C 19.545 3 22 5.507 22 8.432 C 22 16.24 13.842 21 12 21 C 10.158 21 2 16.24 2 8.437 Z" /></svg></span>感谢</button>
-                            <div class="Popover ContentItem-action"><button class="Button OptionsButton Button--plain Button--withIcon Button--iconOnly" id="Popover34-toggle" aria-label="更多" type="button"><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--Dots Button-zi" fill="currentColor" viewBox="0 0 24 24" width="1.2em" height="1.2em">
-                                    <path fill-rule="evenodd" d="M 5 14 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z m 7 0 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z m 7 0 a 2 2 0 1 1 0 -4 a 2 2 0 0 1 0 4 Z" /></svg></span></button></div><button class="Button ContentItem-action ContentItem-rightButton Button--plain" type="button"><span class="RichContent-collapsedText">收起</span><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--ArrowDown ContentItem-arrowIcon is-active" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                              <div class="ShareMenu-toggler" id="Popover33-toggle"><img class="ShareMenu-fakeQRCode" alt="微信二维码" src="https://www.zhihu.com/qrcode?url=https%3A%2F%2Fwww.zhihu.com%2Fanswer%2F587184688%23showWechatShareTip"><button class="Button Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='share' class-name="Zi Zi--Share Button-zi"></svg-icon></span>分享</button></div>
+                            </div><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;">​<svg-icon icon-name='collection' class-name="Zi Zi--Star Button-zi"></svg-icon></span>收藏</button><button class="Button ContentItem-action Button--plain Button--withIcon Button--withLabel" type="button"><span style="display: inline-flex; align-items: center;"><svg-icon icon-name='thanks' class-name="Zi Zi--Heart Button-zi"></svg-icon></span>感谢</button>
+                            <div class="Popover ContentItem-action"><button class="Button OptionsButton Button--plain Button--withIcon Button--iconOnly" id="Popover34-toggle" aria-label="更多" type="button"><span style="display: inline-flex; align-items: center;"><svg-icon icon-name='more' class-name="Zi Zi--Dots Button-zi"></svg-icon></span></button></div><button class="Button ContentItem-action ContentItem-rightButton Button--plain" type="button"><span class="RichContent-collapsedText">收起</span><span style="display: inline-flex; align-items: center;">​<svg xmlns="http://www.w3.org/2000/svg" class="Zi Zi--ArrowDown ContentItem-arrowIcon is-active" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
                                   <path fill-rule="evenodd" d="M 12 13 L 8.285 9.218 a 0.758 0.758 0 0 0 -1.064 0 a 0.738 0.738 0 0 0 0 1.052 l 4.249 4.512 a 0.758 0.758 0 0 0 1.064 0 l 4.246 -4.512 a 0.738 0.738 0 0 0 0 -1.052 a 0.757 0.757 0 0 0 -1.063 0 L 12.002 13 Z" /></svg></span></button>
                           </div>
                         </div>
@@ -189,15 +178,15 @@
                       <div class="AnswerAuthor-counts">
                         <div class="NumberBoard"><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">回答</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='answerNumber'></strong>
+                              <div class="NumberBoard-itemName">回答</div><strong class="NumberBoard-itemValue" :contenteditable='edit' v-html='answerNumber'></strong>
                             </div>
                           </a><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">文章</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='articleNumber'></strong>
+                              <div class="NumberBoard-itemName">文章</div><strong class="NumberBoard-itemValue" :contenteditable='edit' v-html='articleNumber'></strong>
                             </div>
                           </a><a class="Button NumberBoard-item Button--plain" type="button">
                             <div class="NumberBoard-itemInner">
-                              <div class="NumberBoard-itemName">关注者</div><strong  class="NumberBoard-itemValue" :contenteditable='edit' v-html='followerNumber'></strong>
+                              <div class="NumberBoard-itemName">关注者</div><strong class="NumberBoard-itemValue" :contenteditable='edit' v-html='followerNumber'></strong>
                             </div>
                           </a></div>
                       </div>
@@ -212,27 +201,27 @@
                     </div>
                     <div class="Card-section AnswerInfo-favlists">
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">有趣的回答</a></div>
+                        <div class="AnswerInfo-favlist-title"><a class="Button Button--plain" target="_blank" type="button">有趣的回答</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">19,365 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">浩瀚的宇宙和漫漫的浮生</a></div>
+                        <div class="AnswerInfo-favlist-title"><a class="Button Button--plain" target="_blank" type="button">浩瀚的宇宙和漫漫的浮生</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">海蒲</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">5,338 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">watch later</a></div>
+                        <div class="AnswerInfo-favlist-title"><a class="Button Button--plain" target="_blank" type="button">watch later</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">丁鹄儒</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">1,417 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">马克</a></div>
+                        <div class="AnswerInfo-favlist-title"><a class="Button Button--plain" target="_blank" type="button">马克</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">光风</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">236 人关注</div>
                       </div>
                       <div class="AnswerInfo-favlist">
-                        <div class="AnswerInfo-favlist-title"><a  class="Button Button--plain" target="_blank" type="button">感兴趣的有用的</a></div>
+                        <div class="AnswerInfo-favlist-title"><a class="Button Button--plain" target="_blank" type="button">感兴趣的有用的</a></div>
                         <div class="AnswerInfo-favlist-author"><span class="UserLink"><a class="UserLink-link" target="_blank">傻傻</a></span> 创建</div>
                         <div class="AnswerInfo-favlist-followers">119 人关注</div>
                       </div>
@@ -494,6 +483,6 @@ canvas {
   transform: rotate(180deg);
   color: #8590a6;
   font-size: 14px;
-  text-align:right;
+  text-align: right;
 }
 </style>
