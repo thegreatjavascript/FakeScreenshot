@@ -35,6 +35,11 @@ export default new Router({
           component: () => import('@/components/douban/note/Index.vue')
         }
       ]
-    }
+    },
+    {
+      path: '/v2ex',
+      name: 'v2exsimple',
+      component: () => import('@/components/v2ex/simple')
+    },
   ]
 })
