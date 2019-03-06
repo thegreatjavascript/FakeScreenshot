@@ -41,5 +41,10 @@ export default new Router({
       name: 'v2exsimple',
       component: () => import('@/components/v2ex/simple')
     },
+    {
+      path: '/jianshu',
+      name: 'jianshusimple',
+      component: () => import('@/components/jianshu/simple')
+    }
   ]
 })
