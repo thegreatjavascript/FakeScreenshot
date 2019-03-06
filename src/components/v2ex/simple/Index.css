@@ -6,7 +6,7 @@
 }
 
 #DIV_1 {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 770px;
   perspective-origin: 385px 162px;
@@ -680,6 +680,7 @@
   font: normal normal 400 normal 14px / 16.8px Roboto, 'Helvetica Neue Light',
     'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   padding: 5px;
+  position: relative;
 } /*#DIV_25*/
 
 #DIV_25:after {

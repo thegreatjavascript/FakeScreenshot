@@ -37,7 +37,7 @@
               <li id="LI_15">
               </li>
             </a>
-          </div> <small id="SMALL_16"><a href="" id="A_17" :contenteditable="edit" v-html='nickname'></a> · <span :contenteditable="edit" v-html='time'></span> 分钟前 · <span :contenteditable="edit" v-html='clickNumber'></span> 次点击 &nbsp;&nbsp;<div id="watermark">什么是真相？fakes.netlify.com</div></small>
+          </div> <small id="SMALL_16"><a href="" id="A_17" :contenteditable="edit" v-html='nickname'></a> · <span :contenteditable="edit" v-html='time'></span> 分钟前 · <span :contenteditable="edit" v-html='clickNumber'></span> 次点击 &nbsp;&nbsp;<span class="watermark">什么是真相？fakes.netlify.com</span></small>
         </div>
         <div id="DIV_18">
           <div id="DIV_19">
@@ -49,7 +49,7 @@
           <div id="DIV_26">
             <span :contenteditable="edit" v-html='clickNumber'></span> 次点击
           </div>
-          <a href="" id="A_27">加入收藏</a> <a href="#;" id="A_28">Tweet</a> <a href="#;" id="A_29">Weibo</a> <a href="#;" id="A_30">忽略主题</a>
+          <a href="" id="A_27">加入收藏</a> <a href="#;" id="A_28">Tweet</a> <a href="#;" id="A_29">Weibo</a> <a href="#;" id="A_30">忽略主题</a><a href="#;" id="A_30" class='watermark' style='left: 420px;width:auto;'>什么是真相？fakes.netlify.com</a>
           <div id="DIV_31">
             <a href="#;" id="A_32">感谢</a>
           </div>
@@ -202,8 +202,6 @@ export default {
 }
 .watermark {
   transform: rotate(180deg);
-  color: #8590a6;
-  font-size: 14px;
-  text-align: right;
+  position: absolute;
 }
 </style>
