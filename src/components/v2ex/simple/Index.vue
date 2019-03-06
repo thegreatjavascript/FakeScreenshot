@@ -100,23 +100,6 @@ export default {
         allowTaint: true,
         height: height,
         width: width,
-        onclone: element => {
-          const svgElements = element.body
-            .querySelector("#page-container")
-            .getElementsByTagName("svg");
-
-          Array.from(svgElements).forEach((svgElement, index) => {
-            let color = "#7a859c";
-            if (index === 0 || index === 6 || index === 7) {
-              color = "#0079ff ";
-            }
-            if (index === 14 || index === 16) {
-              color = "#ffffff";
-            }
-            const bBox = svgElement.getBBox();
-            svgElement.setAttribute("fill", color);
-          });
-        }
       }).then(canvas => {
         this.dialogVisible = true;
         this.canvas = canvas;
