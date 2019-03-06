@@ -115,7 +115,7 @@ export default {
     return {
       dialogVisible: false,
       starVisible: false,
-      edit: true,
+      edit: false,
       screenWriterVisible: false,
       poster: json.poster,
       title: "阿丽塔：战斗天使 Alita: Battle Angel",

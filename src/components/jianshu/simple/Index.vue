@@ -4,7 +4,7 @@
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
     </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
+    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
       <div id='image-container'>
       </div>
       <span slot="footer" class="dialog-footer">
@@ -14,7 +14,119 @@
       </span>
     </el-dialog>
     <div id='page-container'>
-     
+      <nav id="NAV_2">
+        <div id="DIV_3">
+          <!-- 左上方 Logo -->
+          <a href="/" id="A_4"><img :src="logo" alt="Nav logo" id="IMG_5" /></a>
+          <!-- 右上角 -->
+
+          <!-- 未登录显示登录/注册/写文章 -->
+          <a href="/writer#/" id="A_6"><i id="I_7"></i>写文章</a> <a id="A_8" href="/sign_up">注册</a> <a id="A_9" href="/sign_in">登录</a>
+          <!-- 如果用户登录，显示下拉菜单 -->
+
+          <div id="DIV_10">
+            <a id="A_11"><i id="I_12"></i></a>
+            <div id="DIV_13">
+              <div id="DIV_14">
+                <i id="I_15"></i><span id="SPAN_16">夜间模式</span>
+              </div>
+              <div id="DIV_17">
+                <a id="A_18">开</a> <a id="A_19">关</a>
+              </div>
+              <hr id="HR_20" />
+              <div id="DIV_21">
+                <a id="A_22">宋体</a> <a id="A_23">黑体</a>
+              </div>
+              <div id="DIV_24">
+                <a id="A_25">简</a> <a id="A_26">繁</a>
+              </div>
+            </div>
+          </div>
+          <div id="DIV_27">
+            <div id="DIV_28">
+
+              <button type="button" id="BUTTON_29">
+                <span id="SPAN_30"></span><span id="SPAN_31"></span><span id="SPAN_32"></span>
+              </button>
+            </div>
+            <div id="DIV_33">
+              <ul id="UL_34">
+                <li id="LI_35">
+                  <a href="/" id="A_36"> <span id="SPAN_37">首页</span><i id="I_38"></i></a>
+                </li>
+                <li id="LI_39">
+                  <a id="A_40" href="/apps?utm_medium=desktop&amp;utm_source=navbar-apps"><span id="SPAN_41">下载App</span><i id="I_42"></i></a>
+                </li>
+                <li id="LI_43">
+                  <form action="/search" method="get" id="FORM_44">
+                    <input name="utf8" type="hidden" value="✓" id="INPUT_45" />
+                    <input type="text" name="q" id="INPUT_46" placeholder="搜索" /> <a href="javascript:void(null)" id="A_47"><i id="I_48"></i></a>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="DIV_49">
+        <div id="DIV_50">
+          <div id="DIV_51">
+            <div id="DIV_52">
+            </div>
+            <a href="" id="A_53"></a>
+          </div>
+        </div>
+        <div id="DIV_57">
+          <div id="DIV_58">
+            <h1 id="H1_59" :contenteditable='edit' v-html='title'></h1>
+            <div id="DIV_60">
+              <a href="" id="A_61">
+                  <el-upload v-if='edit' class="avatar-uploader-jianshu-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                <img v-if="avatar" :src="avatar" class="avatar">
+                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+              </el-upload>
+                <img v-else :src="avatar" alt="96" id="IMG_62" />
+                </a>
+              <div id="DIV_63">
+                <span id="SPAN_64"><a href="" id="A_65" :contenteditable='edit' v-html='nickname'></a></span>
+                <a id="A_66"><i id="I_67"></i><span id="SPAN_68">关注</span></a>
+                <div id="DIV_69">
+                  <span id="SPAN_70"><i id="I_71"></i> 1.2</span>
+                  <span id="SPAN_72" :contenteditable='edit' v-html='time'></span>
+                  <span id="SPAN_73">字数 {{content.length}}</span>
+                  <span id="SPAN_74">阅读 <span :contenteditable='edit' v-html='views'></span></span>
+                  <span id="SPAN_75">评论 <span :contenteditable='edit' v-html='comments'></span></span>
+                  <span id="SPAN_76">喜欢 <span :contenteditable='edit' v-html='likes'></span></span>
+                </div>
+              </div>
+            </div>
+            <div id="DIV_77">
+              <div id="DIV_78" :contenteditable='edit' v-html='content'></div>
+            </div>
+          </div>
+          <div id="DIV_84">
+            <p id="P_85">
+              小礼物走一走，来简书关注我
+            </p>
+            <div id="DIV_86">
+              赞赏支持
+            </div>
+            <div id="DIV_87">
+              <ul id="UL_88">
+              </ul>
+            </div>
+          </div>
+          <div id="DIV_89">
+            <a href="/nb/28972913" id="A_90"><i id="I_91"></i> <span id="SPAN_92">日记本</span></a>
+            <div id="DIV_93">
+              © 著作权归作者所有
+            </div>
+            <div id="DIV_94">
+              <a id="A_95">举报文章</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,14 +136,17 @@ import html2canvas from "html2canvas";
 import json from "./image.json";
 
 export default {
-  name: "V2exSimple",
+  name: "jianshuSimple",
   data() {
     return {
       dialogVisible: false,
       edit: true,
       nickname: "鲁迅",
       avatar: json.avatar,
-      clickNumber: 99999,
+      logo: json.logo,
+      views: 99999,
+      comments: 99999,
+      likes: 99999,
       title: "你听过最美的网名是什么？",
       time: "99",
       node: "酷工作",
@@ -112,7 +227,7 @@ export default {
 
 <style scoped src='./Index.css'></style>
 <style lang='scss'>
-.avatar-uploader-v2ex-simple {
+.avatar-uploader-jianshu-simple {
   .el-upload {
     border: 1px dashed #d9d9d9;
     cursor: pointer;
@@ -128,16 +243,20 @@ export default {
   .avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
-    width: 72px;
-    height: 72px;
-    line-height: 72px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
     text-align: center;
   }
   .avatar {
-    width: 72px;
-    height: 72px;
+    width: 48px;
+    height: 48px;
     display: block;
   }
+}
+
+canvas {
+  transform: scale(0.8);
 }
 </style>
 <style scoped lang='scss'>
@@ -147,7 +266,7 @@ export default {
 }
 .container {
   width: 100%;
-  background: #f5f4f5;
+  background: #ffffff;
   margin: auto;
   padding: 20px 0;
 }

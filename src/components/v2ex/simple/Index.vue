@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      edit: true,
+      edit: false,
       nickname: "鲁迅",
       avatar: json.avatar,
       clickNumber: 99999,

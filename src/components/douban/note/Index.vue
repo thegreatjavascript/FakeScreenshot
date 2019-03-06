@@ -296,7 +296,7 @@ export default {
   name: "DoubanNote",
   data() {
     return {
-      edit: true,
+      edit: false,
       dialogVisible: false,
       avatar: json.avatar,
       newMenu: json.new,

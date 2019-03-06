@@ -290,7 +290,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      edit: true,
+      edit: false,
       nickname: "对抗假截图",
       avatar: json.avatar,
       zhihu_recommend_0: json.zhihu_recommend_0,
