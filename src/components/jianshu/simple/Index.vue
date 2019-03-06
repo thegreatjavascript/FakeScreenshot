@@ -140,7 +140,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      edit: true,
+      edit: false,
       nickname: "鲁迅",
       avatar: json.avatar,
       logo: json.logo,
