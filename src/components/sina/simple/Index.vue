@@ -4,8 +4,9 @@
       <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
       <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
       <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
-        <el-button type="info" icon='el-icon-success' size="medium" plain>添加图片</el-button>
+        <el-button type="warning" icon='el-icon-success' size="medium" plain>添加图片</el-button>
       </el-upload>
+      <el-button type="info" icon='el-icon-info' size="medium" @click='random' plain>随机一下</el-button>
     </div>
     <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
       <div id='image-container'>
@@ -97,6 +98,7 @@
 <script>
 import html2canvas from "html2canvas";
 import json from "./image.json";
+import { list } from "./data.json";
 
 export default {
   name: "SinaSimple",
@@ -120,6 +122,11 @@ export default {
     };
   },
   methods: {
+    random() {
+      const result = list[Math.floor(Math.random() * list.length)];
+      this.nickname = result.nickname;
+      this.content = result.content;
+    },
     getMention() {
       document.querySelector("#DIV_27").innerHTML = document
         .querySelector("#DIV_27")
@@ -244,9 +251,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  > button {
-    margin-right: 50px;
-  }
+  justify-content: space-around;
 }
 #image-container {
   display: flex;
