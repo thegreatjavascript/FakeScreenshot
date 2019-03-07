@@ -440,7 +440,6 @@ canvas {
 <style scoped lang='scss'>
 .container {
   width: 100%;
-  background: #f5f4f5;
   margin: auto;
   padding: 20px 0;
 }
@@ -452,6 +451,9 @@ canvas {
     margin: 0;
     margin-right: 50px;
   }
+}
+.dialog-footer {
+  display: block;
 }
 .dialog-container {
   padding: 10px;

@@ -81,12 +81,12 @@
             <h1 id="H1_59" :contenteditable='edit' v-html='title'></h1>
             <div id="DIV_60">
               <a href="" id="A_61">
-                  <el-upload v-if='edit' class="avatar-uploader-jianshu-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
-                <img v-if="avatar" :src="avatar" class="avatar">
-                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-              </el-upload>
+                <el-upload v-if='edit' class="avatar-uploader-jianshu-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                  <img v-if="avatar" :src="avatar" class="avatar">
+                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
                 <img v-else :src="avatar" alt="96" id="IMG_62" />
-                </a>
+              </a>
               <div id="DIV_63">
                 <span id="SPAN_64"><a href="" id="A_65" :contenteditable='edit' v-html='nickname'></a></span>
                 <a id="A_66"><i id="I_67"></i><span id="SPAN_68">关注</span></a>
@@ -174,7 +174,7 @@ export default {
       html2canvas(document.querySelector("#page-container"), {
         allowTaint: true,
         height: height,
-        width: width,
+        width: width
       }).then(canvas => {
         this.dialogVisible = true;
         this.canvas = canvas;
@@ -252,6 +252,11 @@ canvas {
   background: #ffffff;
   margin: auto;
   padding: 20px 0;
+  #image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .toolbar {
   display: flex;
