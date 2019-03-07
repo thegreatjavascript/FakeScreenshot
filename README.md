@@ -127,3 +127,10 @@ yarn run dev // or npm run dev
 
 
 [由Github Projects管理](https://github.com/thegreatjavascript/FakeScreenshot/projects)
+
+
+#### 开源证书
+
+---
+
+[GNU General Public License v3.0](https://github.com/thegreatjavascript/FakeScreenshot/blob/master/LICENSE)
