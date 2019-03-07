@@ -7,8 +7,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'sinasimple',
-      component: () => import('@/components/sina/simple')
+      redirect: '/sina'
+    },
+    {
+      path: '/sina',
+      name: 'sina',
+      component: () => import('@/components/sina/Index'),
+      children: [
+        {
+          path: '/',
+          redirect: 'simple'
+        },
+        {
+          path: 'simple',
+          name: 'simple',
+          component: () => import('@/components/sina/simple/Index')
+        },
+        {
+          path: 'hot',
+          name: 'hot',
+          component: () => import('@/components/sina/hot/Index')
+        }
+      ]
     },
     {
       path: '/zhihu',
