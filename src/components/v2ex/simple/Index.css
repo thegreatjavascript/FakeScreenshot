@@ -553,6 +553,7 @@
   transform-origin: 375px 80px;
   font: normal normal 400 normal 14px / 22.4px Roboto, 'Helvetica Neue Light',
     'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  white-space: pre-wrap;
 } /*#DIV_19, #DIV_20*/
 
 #DIV_19:after,

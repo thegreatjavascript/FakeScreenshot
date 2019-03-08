@@ -128,7 +128,7 @@
                       </div>
                       <div class="RichContent RichContent--unescapable">
                         <div class="RichContent-inner"><span class="RichText ztext CopyrightRichText-richText">
-                            <p :contenteditable="edit" v-html='content'></p>
+                            <p style="white-space: pre-wrap;" :contenteditable="edit" v-html='content'></p>
                           </span></div>
                         <div>
                           <div class="ContentItem-time"><a target="_blank"><span>编辑于 <span :contenteditable='edit' v-html='time'></span></span></a></div>
@@ -291,17 +291,17 @@ export default {
     return {
       dialogVisible: false,
       edit: false,
-      nickname: "对抗假截图",
+      nickname: "鲁迅",
       avatar: json.avatar,
       zhihu_recommend_0: json.zhihu_recommend_0,
       zhihu_recommend_1: json.zhihu_recommend_1,
-      title: "你听过最美的网名是什么？",
+      title: "网上的截图可信吗？",
       description:
-        "问题描述：好久没有上来看，发现已经有好多回答了。第一次知乎提问，谢谢大家的答案～",
+        "经常在群里、论坛、知乎看到有人贴出一张截图试图证明某事，带了一波又一波节奏。\n\r但是截图内容可信吗？",
       questionCommentNumber: "99,999",
       followers: "99,999",
       views: "9,999,999",
-      slogan: "TheGreatJavaScript: https://github.com/thegreatjavascript",
+      slogan: "截屏=实锤？相信你就输了！",
       votesNumber: "99,999",
       votesNumberButton: "99k",
       tags_0: "假新闻",
@@ -314,10 +314,9 @@ export default {
       articleNumber: 999,
       followerNumber: "999,999",
       collectionNumber: "99,999",
-      from: "iPhone客户端",
-      time: "2019-02-24",
-      content:
-        "我给自己建起了一座 非手造的纪念碑 人民走向那里的小径 永远不会荒芜 它将自己坚定不屈的头颅 高高扬起 高过亚历山大的石柱 不 我绝不会死去 心活在神圣的竖琴中 它将比我的骨灰活得更久 不会消亡 只要在这个月照的世界上 还有一个诗人 我的名声就会传扬 整个伟大的俄罗斯都会 听到我的传闻 各种各样的语言 都会呼唤我的姓名 无论骄傲的斯拉夫人的子孙 还是芬兰人 山野的通古斯人 卡尔梅克人 我将长时期地受到人民的尊敬 和爱戴 因为我用竖琴唤起了 人们善良的感情 因为我歌颂过自由 在我的残酷的时代 我还曾为死者呼吁同情 啊我的缪斯 你要听从上天的吩咐 既不怕受人欺侮 也不希求什么桂冠 什么诽谤什么赞扬 一概视若粪土",
+      time: "2048-10-10",
+      content: `某张截图是真还是假，我也不知道。我只知道，现如今“截图”造假的成本非常非常低，并且足以乱真！
+        因此，我们在网络上看到任何截图时，都要“首先怀疑”其真实性。这样才不会被轻易带了节奏。`,
       canvas: ""
     };
   },

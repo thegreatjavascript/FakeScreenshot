@@ -3497,6 +3497,7 @@
     Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     'WenQuanYi Micro Hei', sans-serif;
   outline: rgb(47, 47, 47) none 0px;
+  white-space: pre-wrap;
 } /*#DIV_77, #DIV_78*/
 
 #DIV_77:after,
