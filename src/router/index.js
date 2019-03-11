@@ -65,6 +65,11 @@ export default new Router({
       path: '/jianshu',
       name: 'jianshusimple',
       component: () => import('@/components/jianshu/simple')
+    },
+    {
+      path: '/acfun',
+      name: 'acfunsimple',
+      component: () => import('@/components/acfun/simple')
     }
   ]
 })
