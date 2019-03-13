@@ -1876,16 +1876,7 @@ table {
     border-collapse:collapse;
     border-spacing:0
 }
-@font-face {
-    font-family:"iconfont";
-    src:url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont.eot");
-    src:url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont.eot#iefix") format('embedded-opentype'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont.woff") format('woff'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont.ttf") format('truetype'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont.svg") format('svg');
-}
-@font-face {
-    font-family:"iconfont_new";
-    src:url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont_new.eot");
-    src:url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont_new.eot#iefix") format('embedded-opentype'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont_new.woff") format('woff'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont_new.ttf") format('truetype'), url("http://cdn.aixifan.com/acfun-pc/2.6.48/font/iconfont_new.svg") format('svg');
-}
+
 .icon {
     font-family:"iconfont" !important;
     font-size:16px;

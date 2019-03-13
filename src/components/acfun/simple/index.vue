@@ -678,7 +678,7 @@
       </section>
     </div>
     </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
+    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
       <div id='image-container'>
       </div>
       <span slot="footer" class="dialog-footer">
