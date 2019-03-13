@@ -807,7 +807,7 @@ export default {
 
 
 
-<style  lang='scss'>
+<style  lang='scss' scoped>
 @import "./index.css";
 #DIV_1{
   padding:10px 0;
