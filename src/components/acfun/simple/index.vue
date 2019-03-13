@@ -245,7 +245,7 @@
                     <div  class="upname" v-html='upname' :contenteditable="edit" @input="changeupname">愤怒的鸡儿</div>
                     <div class="up-type" v-html='uptype' :contenteditable="edit" @input="changeuptype">UP主</div>
                   </div>
-                  <div class="up-time">2019年03月10日 18:31:37</div>
+                  <div class="up-time" v-html='time' :contenteditable="edit" @input="changetime" >2019年03月10日 18:31:37</div>
                 </div>
                 <div class="action-up">
                   <a class="message-back">回复</a>
@@ -678,7 +678,15 @@
       </section>
     </div>
     </div>
-   
+    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
+      <div id='image-container'>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <a id="download" download="shuirong.png">
+          <el-button type="primary" @click="download">下载图片</el-button>
+        </a>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -688,6 +696,8 @@ import html2canvas from "html2canvas";
 export default {
   data() {
     return {
+      dialogVisible:false,
+
         title:"随便测试标题",
         edit: false,
         upname:"三大赵日天",
@@ -698,6 +708,7 @@ export default {
         follownum:1,
         msgnum:1,
         canvas: "",
+        time:"2019年03月10日 18:31:37",
         mentionPerson: "",
         isMentioned: false,
         picture: "http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201903/10183608dmsp7ht0.jpg",
@@ -705,6 +716,26 @@ export default {
     };
   },
   methods: {
+    changetime(e){
+        let titleText=e.target.innerHTML;
+        console.log(titleText)
+        this.time=titleText;
+    },
+    download(){
+      let download = document.getElementById("download");
+      let image = document
+        .querySelector("canvas")
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      download.setAttribute("href", image);
+    },
+    showImage(){
+       const dom = document.querySelector("#image-container");
+      if (dom.childNodes.length) {
+        dom.removeChild(dom.childNodes[0]);
+      }
+      dom.appendChild(this.canvas);
+    },
     changeMessage(e){
          let titleText=e.target.innerHTML;
         this.msgnum=titleText;
@@ -778,6 +809,9 @@ export default {
 
 <style  lang='scss'>
 @import "./index.css";
+#DIV_1{
+  padding:10px 0;
+}
 .toolbard{
         display: flex;
     width: 500px;
