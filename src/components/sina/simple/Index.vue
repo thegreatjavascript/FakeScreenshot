@@ -113,7 +113,7 @@ export default {
       starNumber: 99999,
       from: "iPhone客户端",
       time: "1912-11-06 14:31",
-      content: "任何有脑子的中国人，都应该对网上的截图保持怀疑！",
+      content: "我即使是死了，钉在棺材里了，也要在墓里，用这腐朽的声带喊出：“我没说过这句话”",
       canvas: "",
       mentionPerson: "",
       isMentioned: false,
