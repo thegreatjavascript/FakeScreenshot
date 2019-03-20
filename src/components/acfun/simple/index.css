@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('http://cdn.aixifan.com/acfun-pc/2.6.70/font/iconfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #share-more {
     width:420px;
     height:auto;

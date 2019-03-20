@@ -563,10 +563,9 @@ export default {
 };
 </script>
 
+<style src='./index.css' scoped></style>
 
-
-<style  lang='scss' scoped>
-@import "./index.css";
+<style lang='scss' scoped>
 #DIV_1 {
   padding: 10px 0;
 }
