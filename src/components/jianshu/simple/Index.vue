@@ -105,12 +105,13 @@
             </div>
           </div>
           <div id="DIV_84">
-            <p id="P_85">
-              小礼物走一走，来简书关注我
-            </p>
+            <div id="P_85">
+              <p>小礼物走一走，来简书关注我</p>
+            </div>
             <div id="DIV_86">
               赞赏支持
             </div>
+            <div class='watermark'>什么是真相？fakes.netlify.com</div>
             <div id="DIV_87">
               <ul id="UL_88">
               </ul>
@@ -279,6 +280,9 @@ canvas {
 }
 .watermark {
   transform: rotate(180deg);
-  position: absolute;
+  font-family: normal normal 700 normal 17px / 24.2857px -apple-system,
+    "SF UI Text", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+  color: rgb(150, 150, 150);
 }
 </style>
