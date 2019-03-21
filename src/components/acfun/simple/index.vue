@@ -450,7 +450,7 @@ export default {
       dialogVisible: false,
       title: "关于本项目：虚假截图/FakeScreenshot",
       edit: false,
-      upname: "三大赵日天",
+      upname: "鲁迅",
       uptype: "up主",
       ovtenum: 1,
       focusnum: 1,

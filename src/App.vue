@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <el-dialog title="关于本项目" :visible.sync="dialogVisible" width="40%">
+      <info></info>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
     <el-card class='tab-bar'>
       <el-button size="medium" @click='route("/")' plain>微博</el-button>
       <el-button size="medium" @click='route("/zhihu")' plain>知乎</el-button>
@@ -14,12 +20,22 @@
 </template>
 
 <script>
+import Info from "./components/Info";
+
 export default {
   name: "App",
+  data() {
+    return {
+      dialogVisible: true
+    };
+  },
   methods: {
     route(name) {
       this.$router.push(name);
     }
+  },
+  components: {
+    Info
   }
 };
 </script>
@@ -41,5 +57,13 @@ export default {
   iframe {
     margin: 20px 0;
   }
+}
+</style>
+
+<style>
+#_hj-f5b2a1eb-9b07_feedback_minimized
+  > div._hj-f5b2a1eb-9b07_feedback_minimized_label
+  > div._hj-f5b2a1eb-9b07_feedback_minimized_label_text {
+  transform: none !important;
 }
 </style>

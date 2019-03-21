@@ -183,7 +183,6 @@ export default {
 }
 .container {
   width: 100%;
-  background: #f5f4f5;
   margin: auto;
   padding: 20px 0;
 }
