@@ -18,7 +18,7 @@
     <p>那么这个人以后看到其他任何截图时，他会想到本网站的存在，然后就会下意识地怀疑截图的真实性了！</p>
     <p>&nbsp;</p>
     <p>如果你觉得项目有趣，希望能把它分享给别人！</p>
-    <p>关于项目灵感和初衷可以看<a href='https://github.com/thegreatjavascript/FakeScreenshot/blob/master/README.md'>这里</a></p>
+    <p>关于项目灵感和初衷可以看<a href='https://linshuirong.cn/2019/03/24/%E5%AF%B9%E6%8A%97%E5%81%87%E6%B6%88%E6%81%AF%EF%BC%9A%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/'>这里</a></p>
   </div>
 </template>
 
