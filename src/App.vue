@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <a href="https://github.com/shuiRong/vue-drag-tree">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="./assets/fork.png">
+    </a>
     <el-dialog title="关于本项目" :visible.sync="dialogVisible" width="40%">
       <info></info>
       <span slot="footer" class="dialog-footer">
