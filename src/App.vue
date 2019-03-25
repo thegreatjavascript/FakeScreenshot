@@ -35,10 +35,38 @@ export default {
   methods: {
     route(name) {
       this.$router.push(name);
+    },
+    isPC() {
+      //是否为PC端
+      var userAgentInfo = navigator.userAgent;
+      var Agents = [
+        "Android",
+        "iPhone",
+        "SymbianOS",
+        "Windows Phone",
+        "iPad",
+        "iPod"
+      ];
+      var flag = true;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          flag = false;
+          break;
+        }
+      }
+      return flag;
     }
   },
   components: {
     Info
+  },
+  created() {
+    if (!this.isPC()) {
+      window.alert("为了最佳体验，请在电脑端使用本网站！");
+      this.dialogVisible = false;
+    } else {
+      this.dialogVisible = true;
+    }
   }
 };
 </script>
