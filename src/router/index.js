@@ -33,7 +33,7 @@ export default new Router({
     {
       path: '/zhihu',
       name: 'zhihusimple',
-      component: () => import('@/components/zhihu/simple')
+      component: () => import('@/components/zhihu/simple/Index')
     },
     {
       path: '/douban/',
@@ -59,17 +59,17 @@ export default new Router({
     {
       path: '/v2ex',
       name: 'v2exsimple',
-      component: () => import('@/components/v2ex/simple')
+      component: () => import('@/components/v2ex/simple/Index')
     },
     {
       path: '/jianshu',
       name: 'jianshusimple',
-      component: () => import('@/components/jianshu/simple')
+      component: () => import('@/components/jianshu/simple/Index')
     },
     {
       path: '/acfun',
       name: 'acfunsimple',
-      component: () => import('@/components/acfun/simple')
+      component: () => import('@/components/acfun/simple/Index')
     }
   ]
 })
