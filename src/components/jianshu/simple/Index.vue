@@ -219,7 +219,7 @@ export default {
 };
 </script>
 
-<style scoped src='./Index.css'></style>
+<style scoped src='./index.css'></style>
 <style lang='scss'>
 .avatar-uploader-jianshu-simple {
   .el-upload {

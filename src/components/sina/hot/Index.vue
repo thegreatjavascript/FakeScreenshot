@@ -139,7 +139,7 @@ export default {
 };
 </script>
 
-<style scoped src='./Index.css'></style>
+<style scoped src='./index.css'></style>
 <style scoped lang='scss'>
 .container {
   width: 100%;
