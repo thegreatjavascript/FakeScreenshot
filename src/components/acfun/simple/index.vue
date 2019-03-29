@@ -563,7 +563,7 @@ export default {
 };
 </script>
 
-<style src='./index.css' scoped></style>
+<style src='./style.css' scoped></style>
 
 <style lang='scss' scoped>
 #DIV_1 {

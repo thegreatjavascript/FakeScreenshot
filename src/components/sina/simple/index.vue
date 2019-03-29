@@ -213,7 +213,7 @@ export default {
 };
 </script>
 
-<style scoped src='./index.css'></style>
+<style scoped src='./style.css'></style>
 <style lang='scss'>
 .avatar-uploader-sina-simple {
   .el-upload {

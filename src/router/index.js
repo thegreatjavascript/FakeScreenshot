@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/sina',
       name: 'sina',
-      component: () => import('@/components/sina/Index'),
+      component: () => import('@/components/sina/index.vue'),
       children: [
         {
           path: '/',
@@ -21,24 +21,24 @@ export default new Router({
         {
           path: 'simple',
           name: 'simple',
-          component: () => import('@/components/sina/simple/Index')
+          component: () => import('@/components/sina/simple/index.vue')
         },
         {
           path: 'hot',
           name: 'hot',
-          component: () => import('@/components/sina/hot/Index')
+          component: () => import('@/components/sina/hot/index.vue')
         }
       ]
     },
     {
       path: '/zhihu',
       name: 'zhihusimple',
-      component: () => import('@/components/zhihu/simple/Index')
+      component: () => import('@/components/zhihu/simple/index.vue')
     },
     {
       path: '/douban/',
       name: 'douban',
-      component: () => import('@/components/douban/Index.vue'),
+      component: () => import('@/components/douban/index.vue'),
       children: [
         {
           path: '/',
@@ -47,29 +47,29 @@ export default new Router({
         {
           path: 'movie',
           name: 'movie',
-          component: () => import('@/components/douban/movie/Index.vue')
+          component: () => import('@/components/douban/movie/index.vue')
         },
         {
           path: 'note',
           name: 'note',
-          component: () => import('@/components/douban/note/Index.vue')
+          component: () => import('@/components/douban/note/index.vue')
         }
       ]
     },
     {
       path: '/v2ex',
       name: 'v2exsimple',
-      component: () => import('@/components/v2ex/simple/Index')
+      component: () => import('@/components/v2ex/simple/index.vue')
     },
     {
       path: '/jianshu',
       name: 'jianshusimple',
-      component: () => import('@/components/jianshu/simple/Index')
+      component: () => import('@/components/jianshu/simple/index.vue')
     },
     {
       path: '/acfun',
       name: 'acfunsimple',
-      component: () => import('@/components/acfun/simple/Index')
+      component: () => import('@/components/acfun/simple/index.vue')
     }
   ]
 })
