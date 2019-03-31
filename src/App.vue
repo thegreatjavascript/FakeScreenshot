@@ -16,6 +16,7 @@
       <el-button size="medium" @click='route("/v2ex")' plain>V2EX</el-button>
       <el-button size="medium" @click='route("/jianshu")' plain>简书</el-button>
       <el-button size="medium" @click='route("/acfun")' plain>Acfun</el-button>
+       <el-button size="medium" @click='route("/twitter")' plain>Twitter</el-button>
     </el-card>
     <router-view />
     <iframe src="https://ghbtns.com/github-btn.html?user=thegreatjavascript&repo=FakeScreenshot&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>

@@ -70,6 +70,11 @@ export default new Router({
       path: '/acfun',
       name: 'acfunsimple',
       component: () => import('@/components/acfun/simple/index.vue')
+    },
+    {
+      path: '/twitter',
+      name: 'twittersimple',
+      component: () => import('@/components/twitter/simple/index.vue')
     }
   ]
 })
