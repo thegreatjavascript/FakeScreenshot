@@ -59,56 +59,15 @@ ol {
 	vertical-align: top;
 	width: 100%;
 }
-.Grid--withGutter > .Grid-cell {
-	padding: 0 5px;
-}
-.Grid {
-	display: block;
-	font-size: 0px;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-}
-.Grid--withGutter {
-	margin: 0 -5px;
-}
-.u-size2of3, .u-size4of6, .u-size8of12 {
-	width: 66.66% !important;
-}
 .content-main {
-	float: right;
 	width: 590px;
 }
-.ProfilePage .content-main {
-	border-radius: 0;
-	float: none;
-	position: relative;
-	width: auto;
-}
 /* @media all and (min-width:1236px) */
-body.three-col .content-main {
-	float: left;
-	margin: 0 10px;
-}
-.ProfilePage.three-col .AppContent-main.content-main {
+.TwitterPage.three-col {
 	float: none;
 	margin: 0;
 }
-.AppContainer {
-	margin: 0 auto;
-	max-width: 890px;
-}
 /* @media screen and (min-width:1236px) */
-.AppContainer {
-	max-width: 1190px;
-}
-.AppContent {
-	padding: 56px 14px 15px;
-	position: relative;
-}
-.ProfilePage .AppContent {
-	padding: 46px 0 0;
-}
 body {
 	background: #e6ecf0;
 	color: #14171a;
@@ -121,22 +80,22 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
-html, body, #doc, #page-outer {
+html, body, #doc {
 	height: 100%;
 }
 body {
 	margin: 0;
 }
-body {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+body, .font-body {
+	font-family: "Helvetica Neue",Helvetica,Arial,Nimbus Sans,sans-serif;
 	position: relative;
 }
 body {
 	background-color: #e6ecf0;
 }
-.ProfilePage {
+.TwitterPage {
 	line-height: 1.375;
-	min-width: 936px;
+	/*min-width: 936px;*/
 }
 body.ms-windows {
 	font-family: "Segoe UI",Arial,sans-serif;
@@ -242,40 +201,40 @@ body.ms-windows {
 :last-child:not(.ProfileTweet-action--more).ProfileTweet-action {
 	min-width: 26px;
 }
-button, input, optgroup, select, textarea {
+.TwitterPage button, input, optgroup, select, textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
 }
-button {
+.TwitterPage button {
 	overflow: visible;
 }
-button, select {
+.TwitterPage button, select {
 	text-transform: none;
 }
-button, html input[type='button'], input[type='reset'], input[type='submit'] {
+.TwitterPage button, html input[type='button'], input[type='reset'], input[type='submit'] {
 	-webkit-appearance: button;
 	cursor: pointer;
 }
-button {
+.TwitterPage button {
 	background: transparent;
 	border: 0;
 	padding: 0;
 	transition: box-shadow .15s ease-in-out;
 }
-button {
+.TwitterPage button {
 	border: 0;
 }
 .u-linkClean, .u-linkClean:hover, .u-linkClean:focus, .u-linkClean:active {
 	text-decoration: none !important;
 }
 .ProfileTweet-actionButton, .ProfileTweet-actionButtonUndo {
-	color: #657786;
-	display: inline-block;
-	font-size: 16px;
-	line-height: 1;
-	padding: 0 2px;
-	position: relative;
+	color: #657786 !important;
+	display: inline-block !important;
+	font-size: 16px !important;
+	line-height: 1 !important;
+	padding: 0 2px !important;
+	position: relative !important;
 }
 .ProfileTweet-action--favorite .ProfileTweet-actionButtonUndo, .favorited .ProfileTweet-action--favorite .ProfileTweet-actionButton {
 	display: none;
@@ -308,25 +267,12 @@ button {
 	line-height: 18px;
 }
 .ProfileTweet-action--favorite .Icon--heart, .ProfileTweet-action--unfavorite .Icon--heart {
-	visibility: hidden;
-}
-.HeartAnimation {
-	position: absolute;
-	background-image: url("../../img/animations/web_heart_animation_edge.png");
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: 2900%;
-	height: 50px;
-	width: 50px;
-	left: 50%;
-	top: 50%;
-	-ms-transform: translate(-50%,-47.5%);
-	transform: translate(-50%, -47.5%);
+	/*visibility: hidden;*/
 }
 .ProfileTweet-action--retweet .ProfileTweet-actionButtonUndo, .retweeted .ProfileTweet-action--retweet .ProfileTweet-actionButton {
 	display: none;
 }
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, p, pre {
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, .TwitterPage p, pre {
 	margin: 0;
 }
 .TweetTextSize {
@@ -346,14 +292,14 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, p, pre {
 	line-height: 20px;
 	font-weight: normal;
 }
-a {
+.TwitterPage a {
 	background: transparent;
 }
-a {
+.TwitterPage a {
 	color: #1c94e0;
 	text-decoration: none;
 }
-a, a:hover, a:focus, a:active {
+.TwitterPage a, .TwitterPage a:hover, .TwitterPage a:focus, .TwitterPage a:active {
 	color: #1b95e0;
 }
 .pretty-link b {
@@ -371,7 +317,7 @@ s, .pretty-link:hover s, .pretty-link:focus s, .stream-item-activity-notificatio
 b, strong {
 	font-weight: bold;
 }
-b {
+.TwitterPage b {
 	font-weight: normal;
 }
 .TweetTextSize .twitter-hashtag b, .TweetTextSize .twitter-atreply b {
@@ -398,10 +344,10 @@ b {
 	flex-shrink: 1;
 	overflow: hidden;
 }
-small {
+.TwitterPage small {
 	font-size: 80%;
 }
-small {
+.TwitterPage small {
 	font-size: 12px;
 }
 .stream-item-header .time {
@@ -504,20 +450,15 @@ small {
 	font-size: 16px;
 	line-height: 15px;
 }
-img {
+.TwitterPage img {
 	border: 0;
 }
 .avatar {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	-moz-force-broken-image-icon: 1;
-}
-.stream-item-header .avatar, .permalink-header .avatar {
-	float: left;
-	margin-top: 3px;
-	margin-left: -58px;
-	position: absolute;
+  float: left;
+  position: relative;
 }
 .stream-item-header .account-group .FullNameGroup {
 	display: -moz-box;
@@ -549,4 +490,73 @@ img {
 }
 .account-group .UserBadges .Icon--verified {
 	font-size: 1.2em;
+}
+.Icon--verified::after {
+  content: "\f099";
+  line-height: 1;
+  position: relative;
+}
+.Icon--verified::before {
+  /*content: "\f032";*/
+  font-size: .7em;
+  left: 26%;
+  line-height: 1;
+  position: absolute;
+  top: 20%;
+}
+.Icon::after, .Icon::before {
+  display: block;
+  font-family: "edgeicons";
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tweet .time::before {
+  content: "\00b7";
+}
+.Icon--caretDownLight::before {
+  content: "\f196";
+}
+.Icon--reply::before {
+  content: "\f151";
+}
+.Icon--retweet::before {
+  content: "\f152";
+}
+.Icon--heart::before {
+  content: "\f148";
+}
+.Icon--dm::before {
+  content: "\f054";
+}
+.Icon--heartBadge::before {
+  content: "\f015";
+}
+.Icon--follower::before {
+  content: "\f002";
+}
+.Icon--retweeted::before {
+  content: "\f006";
+}
+
+.tweet > .context .with-icn {
+  margin-left: -24px;
+}
+.with-icn {
+  font-size: 12px;
+  color: #657786;
+}
+.tweet > .context .with-icn .Icon {
+  color: #657786;
+  font-size: 14px;
+  margin: 0 6px 0 0;
+  position: relative;
+  top: 2px;
+}
+.tweet-context {
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 6px;
 }
