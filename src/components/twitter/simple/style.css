@@ -22,8 +22,7 @@ li {
 }
 :not(.no-header-background-module).stream-item {
 	background: #fff;
-	border-left: 1px solid #e6ecf0;
-	border-right: 1px solid #e6ecf0;
+	border: 1px solid #e6ecf0;
 	background-clip: padding-box;
 }
 ol, ul {
