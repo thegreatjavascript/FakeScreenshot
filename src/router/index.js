@@ -73,7 +73,7 @@ export default new Router({
     },
     {
       path: '/twitter',
-      name: 'twittersimple',
+      name: 'TwitterSimple',
       component: () => import('@/components/twitter/simple/index.vue')
     }
   ]
