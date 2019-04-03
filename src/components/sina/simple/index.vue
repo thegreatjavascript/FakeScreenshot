@@ -113,7 +113,8 @@ export default {
       starNumber: 99999,
       from: "iPhone客户端",
       time: "1912-11-06 14:31",
-      content: "我即使是死了，钉在棺材里了，也要在墓里，用这腐朽的声带喊出：“我没说过这句话”",
+      content:
+        "我即使是死了，钉在棺材里了，也要在墓里，用这腐朽的声带喊出：“我没说过这句话”",
       canvas: "",
       mentionPerson: "",
       isMentioned: false,
@@ -167,7 +168,8 @@ export default {
         allowTaint: true,
         useCORS: true,
         height: height,
-        width: width
+        width: width,
+        scale: 1 // 修改画质：1为正常，越小画质越低
       }).then(canvas => {
         this.canvas = canvas;
         this.dialogVisible = true;

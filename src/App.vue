@@ -16,7 +16,7 @@
       <el-button size="medium" @click='route("/v2ex")' plain>V2EX</el-button>
       <el-button size="medium" @click='route("/jianshu")' plain>简书</el-button>
       <el-button size="medium" @click='route("/acfun")' plain>Acfun</el-button>
-       <el-button size="medium" @click='route("/twitter")' plain>Twitter</el-button>
+      <el-button size="medium" @click='route("/twitter")' plain>Twitter</el-button>
     </el-card>
     <router-view />
     <iframe src="https://ghbtns.com/github-btn.html?user=thegreatjavascript&repo=FakeScreenshot&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
@@ -63,6 +63,11 @@ export default {
     Info
   },
   created() {
+    // 开发环境不显示弹框
+    if (process.env.NODE_ENV === "development") {
+      this.dialogVisible = false;
+      return;
+    }
     if (!this.isPC()) {
       window.alert("为了最佳体验，请在电脑端使用本网站！");
       this.dialogVisible = false;
