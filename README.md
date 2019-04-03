@@ -106,11 +106,3 @@ yarn run dev // or npm run dev
 
 浏览器打开：http://localhost:8080
 
-
-
-
-#### 开源证书
-
----
-
-[GNU General Public License v3.0](https://github.com/thegreatjavascript/FakeScreenshot/blob/master/LICENSE)
