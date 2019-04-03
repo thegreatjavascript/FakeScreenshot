@@ -71,13 +71,23 @@
 
 ------
 
-**须知：** 参与开发需要你了解基本`Git`技能（关键词：Git分支、提交Pull Request）
+**Coding前你需要知道：**
 
-1. 联系我加入Organization：TheGreatJavaScript
-2. 新建分支：以你的Github名称来命名
-3. 开发：在你的分支开发，然后自己合并到Master分支（P.S. 目前开发者少，没必要采用更合理但也更复杂地协作方式了）
+1. 项目待办事项由 [Github Projects](https://github.com/thegreatjavascript/FakeScreenshot/projects) 管理
+2. 样式100%模仿实现思路：相关的HTML、CSS不是自己实现的，而是利用Chrome扩展SnappySnippet提取的某DOM的HTML及CSS。但这个插件在有的时候无法正确提取出某些HTML、CSS。所以方法二：IE/Edge浏览器控制台，DOM右键菜单有个提取HTML及样式的功能。得到目标HTML、CSS后，就可以添加到项目中，然后利用Vue的双向绑定等特性进行“改造”了
+3. 多参考其他代码
 
-项目开发群：792410430 （仅限已经或者将要为项目**贡献代码**的开发者加入！）
+
+
+**协作流程：**
+
+1. Fork
+2. Write code
+3. Pull Request
+
+
+
+> 开发时遇到问题也可以在issue区提出来，我们一起讨论。
 
 
 
@@ -97,13 +107,6 @@ yarn run dev // or npm run dev
 浏览器打开：http://localhost:8080
 
 
-
-#### 待办事项
-
----
-
-
-[由Github Projects管理](https://github.com/thegreatjavascript/FakeScreenshot/projects)
 
 
 #### 开源证书
