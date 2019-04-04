@@ -7,7 +7,7 @@
     </div>
     <el-dialog title="" width="95%" top='2vh' :visible.sync="dialogVisible" @opened='showImage'>
       <div id='image-container'>
-        <img ref="image" :src="image">
+        <img id="image" :src="image">
       </div>
       <span slot="footer" class="dialog-footer">
         <el-slider v-model="count" @change="toGreen"></el-slider>
@@ -53,10 +53,13 @@ export default {
       });
     },
     showImage() {
+      this.count = 0;
       this.toGreen(0);
     },
     toGreen(value) {
-      this.image = green(this.canvas, this.imageData, value);
+      this.image = green(this.canvas, this.imageData, value).then(imageUrl => {
+        this.image = imageUrl;
+      });
     },
     download() {
       let download = document.getElementById("download");
@@ -85,7 +88,8 @@ export default {
   justify-content: center;
   align-items: center;
 }
-canvas {
-  transform: scale(0.9);
+#image {
+  width: 100%;
+  height: 100%;
 }
 </style>
