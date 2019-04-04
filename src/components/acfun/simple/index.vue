@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class='toolbard'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
+  <div class="container">
+    <tool @change="changeMode">
       <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
         <el-button type="warning" icon='el-icon-success' size="medium" plain>更换头像</el-button>
       </el-upload>
-    </div>
+    </tool>
     <div id="DIV_1">
       <div id="header" class="header clearfix">
         <nav id="nav" class="wp nav">
@@ -429,25 +427,16 @@
         </section>
       </div>
     </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
   </div>
 </template>
 
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
+
 export default {
   data() {
     return {
-      dialogVisible: false,
       title: "关于本项目：虚假截图/FakeScreenshot",
       edit: false,
       upname: "鲁迅",
@@ -469,7 +458,6 @@ export default {
       `,
       follownum: 1,
       msgnum: 1,
-      canvas: "",
       time: "2019年03月10日 18:31:37",
       mentionPerson: "",
       isMentioned: false,
@@ -483,21 +471,6 @@ export default {
       let titleText = e.target.innerHTML;
       console.log(titleText);
       this.time = titleText;
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
     },
     changeMessage(e) {
       let titleText = e.target.innerHTML;
@@ -544,21 +517,10 @@ export default {
       this.getBase64(file).then(res => {
         this.picture = res;
       });
-    },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#DIV_1");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(screenShot, {
-        allowTaint: true,
-        useCORS: true,
-        height: height,
-        width: width
-      }).then(canvas => {
-        this.canvas = canvas;
-        this.dialogVisible = true;
-      });
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -566,14 +528,10 @@ export default {
 <style src='./style.css' scoped></style>
 
 <style lang='scss' scoped>
-#DIV_1 {
-  padding: 10px 0;
-}
-.toolbard {
-  display: flex;
-  width: 500px;
-  margin: 0 auto;
-  justify-content: space-between;
+.container {
+  width: fit-content;
+  margin: auto;
+  padding: 20px 0;
 }
 .el-button + .el-button {
   margin-left: 0;

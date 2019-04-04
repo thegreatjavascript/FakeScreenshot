@@ -1,20 +1,9 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
+    <tool @change="changeMode">
       <el-button icon='el-icon-success' size="medium" @click='screenWriterVisible = true' plain>添加编剧</el-button>
       <el-button icon='el-icon-success' size="medium" @click='starVisible = true' plain>添加主演</el-button>
-    </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer download">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
+    </tool>
     <el-dialog title="添加编剧" :visible.sync="screenWriterVisible" width='30%'>
       <div>
         <div class='dialog-div' v-for='(item,index) in screenWriter'>
@@ -43,57 +32,55 @@
         </a>
       </span>
     </el-dialog>
-    <div id='page-container'>
-      <div id="DIV_1">
-        <div id="DIV_2">
-          <div id="DIV_3">
-          </div>
-          <h1 id="H1_4">
-            <span id="SPAN_5" :contenteditable="edit" v-html='title'></span> <span id="SPAN_6">(<span :contenteditable="edit" v-html='time'></span>)</span>
-          </h1>
-          <div id="DIV_7">
-            <div id="DIV_8">
-              <div id="DIV_9">
-                <div id="DIV_10">
-                  <div id="DIV_11">
-                    <div id="DIV_12">
-                      <el-upload v-if='edit' class="avatar-uploader-douban-movie" action="" :show-file-list="false" :before-upload="beforeAvatarUpload">
-                        <img v-if="poster" :src="poster" class="avatar">
-                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                      </el-upload>
-                      <a v-else href="" id="A_13"><img :src="poster" alt="Alita: Battle Angel" id="IMG_14" /></a>
-                    </div>
-                    <div id="DIV_15">
-                      <span id="SPAN_16"><span id="SPAN_17">导演</span>: <span id="SPAN_18"><a href="" id="A_19" :contenteditable="edit" v-html='director'></a></span></span>
-                      <br id="BR_20" />
-                      <span id="SPAN_21"><span id="SPAN_22">编剧</span>: <span id="SPAN_23" :contenteditable="edit" v-html='screenwriterHTML'></span></span>
-                      <br id="BR_27" />
-                      <span id="SPAN_28">
-                        <span id="SPAN_29">主演</span>:
-                        <span id="SPAN_30">
-                          <span id="SPAN_31">
-                            <span id="SPAN_33" :contenteditable="edit" v-html='starHTML'>
-                            </span>
-                            <a href="javascript:;" title="更多主演" id="A_83">更多...</a>
+    <div id="DIV_1">
+      <div id="DIV_2">
+        <div id="DIV_3">
+        </div>
+        <h1 id="H1_4">
+          <span id="SPAN_5" :contenteditable="edit" v-html='title'></span> <span id="SPAN_6">(<span :contenteditable="edit" v-html='time'></span>)</span>
+        </h1>
+        <div id="DIV_7">
+          <div id="DIV_8">
+            <div id="DIV_9">
+              <div id="DIV_10">
+                <div id="DIV_11">
+                  <div id="DIV_12">
+                    <el-upload v-if='edit' class="avatar-uploader-douban-movie" action="" :show-file-list="false" :before-upload="beforeAvatarUpload">
+                      <img v-if="poster" :src="poster" class="avatar">
+                      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                    <a v-else href="" id="A_13"><img :src="poster" alt="Alita: Battle Angel" id="IMG_14" /></a>
+                  </div>
+                  <div id="DIV_15">
+                    <span id="SPAN_16"><span id="SPAN_17">导演</span>: <span id="SPAN_18"><a href="" id="A_19" :contenteditable="edit" v-html='director'></a></span></span>
+                    <br id="BR_20" />
+                    <span id="SPAN_21"><span id="SPAN_22">编剧</span>: <span id="SPAN_23" :contenteditable="edit" v-html='screenwriterHTML'></span></span>
+                    <br id="BR_27" />
+                    <span id="SPAN_28">
+                      <span id="SPAN_29">主演</span>:
+                      <span id="SPAN_30">
+                        <span id="SPAN_31">
+                          <span id="SPAN_33" :contenteditable="edit" v-html='starHTML'>
                           </span>
+                          <a href="javascript:;" title="更多主演" id="A_83">更多...</a>
                         </span>
                       </span>
-                      <br id="BR_84" />
-                      <span id="SPAN_85">类型:</span> <span :contenteditable="edit" v-html='type'></span>
-                      <br id="BR_89" />
-                      <span id="SPAN_90">制片国家/地区:</span> <span :contenteditable="edit" v-html='country'></span>
-                      <br id="BR_91" />
-                      <span id="SPAN_92">语言:</span> <span :contenteditable="edit" v-html='language'></span>
-                      <br id="BR_93" />
-                      <span id="SPAN_94">上映日期:</span><span :contenteditable="edit" v-html='releaseDate'></span>
-                      <br id="BR_98" />
-                      <span id="SPAN_99">片长:</span> <span id="SPAN_100"><span :contenteditable="edit" v-html='length'></span>分钟<span id="watermark">什么是真相？fakes.netlify.com</span></span>
-                      <br id="BR_101" />
-                      <span id="SPAN_102">又名:</span><span :contenteditable="edit" v-html='alias'></span>
-                      <br id="BR_103" />
-                      <span id="SPAN_104">IMDb链接:</span> <a href="" rel="nofollow" id="A_105" :contenteditable="edit" v-html='link'></a>
-                      <br id="BR_106" />
-                    </div>
+                    </span>
+                    <br id="BR_84" />
+                    <span id="SPAN_85">类型:</span> <span :contenteditable="edit" v-html='type'></span>
+                    <br id="BR_89" />
+                    <span id="SPAN_90">制片国家/地区:</span> <span :contenteditable="edit" v-html='country'></span>
+                    <br id="BR_91" />
+                    <span id="SPAN_92">语言:</span> <span :contenteditable="edit" v-html='language'></span>
+                    <br id="BR_93" />
+                    <span id="SPAN_94">上映日期:</span><span :contenteditable="edit" v-html='releaseDate'></span>
+                    <br id="BR_98" />
+                    <span id="SPAN_99">片长:</span> <span id="SPAN_100"><span :contenteditable="edit" v-html='length'></span>分钟<span id="watermark">什么是真相？fakes.netlify.com</span></span>
+                    <br id="BR_101" />
+                    <span id="SPAN_102">又名:</span><span :contenteditable="edit" v-html='alias'></span>
+                    <br id="BR_103" />
+                    <span id="SPAN_104">IMDb链接:</span> <a href="" rel="nofollow" id="A_105" :contenteditable="edit" v-html='link'></a>
+                    <br id="BR_106" />
                   </div>
                 </div>
               </div>
@@ -106,14 +93,13 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
 import json from "./image.json";
 
 export default {
   name: "DoubanMovie",
   data() {
     return {
-      dialogVisible: false,
       starVisible: false,
       edit: false,
       screenWriterVisible: false,
@@ -132,7 +118,6 @@ export default {
       length: "122",
       alias: "铳梦 / 铳梦：战斗天使(港) / 艾莉塔：战斗天使(台)",
       link: "tt0437086",
-      canvas: "",
       picture: "",
       imageUrl: ""
     };
@@ -148,26 +133,6 @@ export default {
         reader.onload = () => resolve(reader.result);
         reader.onerror = error => reject(error);
       });
-    },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#page-container");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(document.querySelector("#page-container"), {
-        // allowTaint: true,
-        height: height,
-        width: width
-      }).then(canvas => {
-        this.dialogVisible = true;
-        this.canvas = canvas;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
     },
     beforeAvatarUpload(file) {
       this.getBase64(file).then(res => {
@@ -186,14 +151,6 @@ export default {
         document.getElementById("DIV_27").appendChild(image);
         image.style = "display:block";
       });
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     },
     appendScreenWriterHTML() {
       this.screenwriterHTML = "";
@@ -228,6 +185,9 @@ export default {
     addStar() {
       this.star = this.star.concat({ name: "" });
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -285,16 +245,6 @@ export default {
   width: fit-content;
   margin: auto;
   padding: 20px 0;
-}
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #watermark {
   transform: rotate(180deg);

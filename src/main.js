@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Button, Dialog, Icon, Card, Upload } from 'element-ui'
+import { Button, Dialog, Icon, Card, Upload, Slider } from 'element-ui'
 import './icons'
 
 Vue.use(Button)
@@ -11,6 +11,7 @@ Vue.use(Dialog)
 Vue.use(Icon)
 Vue.use(Card)
 Vue.use(Upload)
+Vue.use(Slider)
 
 Vue.config.productionTip = false
 

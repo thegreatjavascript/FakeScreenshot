@@ -1,58 +1,45 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
-    </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
-      <div id='image-container'>
+    <tool @change="changeMode">
+    </tool>
+    <div id="DIV_1">
+      <div id="DIV_2">
+        <div id="DIV_3">
+          <a href="javascript:void;" id="A_4">
+            <el-upload v-if='edit' class="avatar-uploader-v2ex-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+              <img v-if="avatar" :src="avatar" class="avatar">
+              <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+            <img v-else :src="avatar" id="IMG_5" alt='' />
+          </a>
+        </div> <a href="" id="A_6">V2EX</a> <span id="SPAN_7">›</span> <a href="" id="A_8" :contenteditable="edit" v-html='node'></a>
+        <div id="DIV_9">
+        </div>
+        <h1 id="H1_10" :contenteditable="edit" v-html='title'></h1>
+        <div id="DIV_11">
+          <a href="javascript:" id="A_12">
+            <li id="LI_13">
+            </li>
+          </a>
+          <a href="javascript:" id="A_14">
+            <li id="LI_15">
+            </li>
+          </a>
+        </div> <small id="SMALL_16"><a href="" id="A_17" :contenteditable="edit" v-html='nickname'></a> · <span :contenteditable="edit" v-html='time'></span> 分钟前 · <span :contenteditable="edit" v-html='clickNumber'></span> 次点击 &nbsp;&nbsp;<span class="watermark">什么是真相？fakes.netlify.com</span></small>
       </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
-    <div id='page-container'>
-      <div id="DIV_1">
-        <div id="DIV_2">
-          <div id="DIV_3">
-            <a href="javascript:void;" id="A_4">
-              <el-upload v-if='edit' class="avatar-uploader-v2ex-simple" action="" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
-                <img v-if="avatar" :src="avatar" class="avatar">
-                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-              </el-upload>
-              <img v-else :src="avatar" id="IMG_5" alt='' />
-            </a>
-          </div> <a href="" id="A_6">V2EX</a> <span id="SPAN_7">›</span> <a href="" id="A_8" :contenteditable="edit" v-html='node'></a>
-          <div id="DIV_9">
-          </div>
-          <h1 id="H1_10" :contenteditable="edit" v-html='title'></h1>
-          <div id="DIV_11">
-            <a href="javascript:" id="A_12">
-              <li id="LI_13">
-              </li>
-            </a>
-            <a href="javascript:" id="A_14">
-              <li id="LI_15">
-              </li>
-            </a>
-          </div> <small id="SMALL_16"><a href="" id="A_17" :contenteditable="edit" v-html='nickname'></a> · <span :contenteditable="edit" v-html='time'></span> 分钟前 · <span :contenteditable="edit" v-html='clickNumber'></span> 次点击 &nbsp;&nbsp;<span class="watermark">什么是真相？fakes.netlify.com</span></small>
-        </div>
-        <div id="DIV_18">
-          <div id="DIV_19">
-            <div id="DIV_20" :contenteditable="edit" v-html='content'>
-            </div>
+      <div id="DIV_18">
+        <div id="DIV_19">
+          <div id="DIV_20" :contenteditable="edit" v-html='content'>
           </div>
         </div>
-        <div id="DIV_25">
-          <div id="DIV_26">
-            <span :contenteditable="edit" v-html='clickNumber'></span> 次点击
-          </div>
-          <a href="" id="A_27">加入收藏</a> <a href="#;" id="A_28">Tweet</a> <a href="#;" id="A_29">Weibo</a> <a href="#;" id="A_30">忽略主题</a><a href="#;" id="A_30" class='watermark' style='left: 420px;width:auto;'>什么是真相？fakes.netlify.com</a>
-          <div id="DIV_31">
-            <a href="#;" id="A_32">感谢</a>
-          </div>
+      </div>
+      <div id="DIV_25">
+        <div id="DIV_26">
+          <span :contenteditable="edit" v-html='clickNumber'></span> 次点击
+        </div>
+        <a href="" id="A_27">加入收藏</a> <a href="#;" id="A_28">Tweet</a> <a href="#;" id="A_29">Weibo</a> <a href="#;" id="A_30">忽略主题</a><a href="#;" id="A_30" class='watermark' style='left: 420px;width:auto;'>什么是真相？fakes.netlify.com</a>
+        <div id="DIV_31">
+          <a href="#;" id="A_32">感谢</a>
         </div>
       </div>
     </div>
@@ -60,14 +47,13 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
 import json from "./image.json";
 
 export default {
   name: "V2exSimple",
   data() {
     return {
-      dialogVisible: false,
       edit: false,
       nickname: "FakeScreenshot",
       avatar: json.avatar,
@@ -90,7 +76,6 @@ export default {
       我最先想到的其实并不是「FakeScreenshot」项目，而是：运营一个专门替别人“求证”某事真实性的微博账户。当然，也不是所有的事情我都可以“搞定”，毕竟我只是一个没有什么社会能量的普通程序员，但仍旧有一些事情我可以求证出来。不过因为近期时间已经被其他事情占用了，因此这个想法一直没有实施。后面我才想到何不做一个“截图造假”的网站，这样任何知道此网站存在的人，心里都会明白：“哦，原来各大网站截图都是可以轻易伪造的啊”。这样当他再次看到其他截图的时候，会想起来此网站的存在，然后就会下意识地怀疑截图的真实性了。
       这也就是本项目存在的意义了！
       `,
-      canvas: ""
     };
   },
   methods: {
@@ -105,26 +90,6 @@ export default {
         reader.onerror = error => reject(error);
       });
     },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#page-container");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(document.querySelector("#page-container"), {
-        allowTaint: true,
-        height: height,
-        width: width
-      }).then(canvas => {
-        this.dialogVisible = true;
-        this.canvas = canvas;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -133,15 +98,10 @@ export default {
         this.avatar = res;
       });
       return true;
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -185,15 +145,6 @@ export default {
   width: 100%;
   margin: auto;
   padding: 20px 0;
-}
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  > button {
-    margin: 0;
-    margin-right: 50px;
-  }
 }
 .watermark {
   transform: rotate(180deg);

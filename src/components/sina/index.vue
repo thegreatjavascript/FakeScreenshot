@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='toolbar'>
+    <div class='tab2'>
       <el-button size="small" @click='route("/sina/simple")' plain>微博</el-button>
       <el-button size="small" @click='route("/sina/hot")' plain>热搜</el-button>
     </div>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.toolbar {
+.tab2 {
   margin: auto;
   width: fit-content;
   margin-bottom: 20px;

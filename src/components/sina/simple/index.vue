@@ -1,22 +1,11 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
-      <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
-        <el-button type="warning" icon='el-icon-success' size="medium" plain>添加图片</el-button>
-      </el-upload>
-      <el-button type="info" icon='el-icon-info' size="medium" @click='random' plain>随机一下</el-button>
-    </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
+    <tool @change="changeMode">
+        <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
+            <el-button type="warning" icon='el-icon-success' size="medium" plain>添加图片</el-button>
+        </el-upload>
+        <el-button type="info" icon='el-icon-info' size="medium" @click='random' plain>随机一下</el-button>
+    </tool>
     <el-dialog title="" :visible.sync="isMentioned">
       <div>
         <el-input autofocus title="@someon" placeholder="输入用户名" v-model="mentionPerson" @keyup.enter.native="getMention">
@@ -96,6 +85,7 @@
 </template>
 
 <script>
+import Tool from "@/components/Tool";
 import html2canvas from "html2canvas";
 import json from "./image.json";
 import { list } from "./data.json";
@@ -104,7 +94,6 @@ export default {
   name: "SinaSimple",
   data() {
     return {
-      dialogVisible: false,
       edit: false,
       nickname: "鲁迅",
       avatar: json.avatar,
@@ -115,7 +104,6 @@ export default {
       time: "1912-11-06 14:31",
       content:
         "我即使是死了，钉在棺材里了，也要在墓里，用这腐朽的声带喊出：“我没说过这句话”",
-      canvas: "",
       mentionPerson: "",
       isMentioned: false,
       picture: "",
@@ -160,28 +148,6 @@ export default {
         reader.onerror = error => reject(error);
       });
     },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#DIV_1");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(screenShot, {
-        allowTaint: true,
-        useCORS: true,
-        height: height,
-        width: width,
-        scale: 1 // 修改画质：1为正常，越小画质越低
-      }).then(canvas => {
-        this.canvas = canvas;
-        this.dialogVisible = true;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -202,15 +168,10 @@ export default {
         document.getElementById("DIV_27").appendChild(image);
         image.style = "display:block";
       });
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -248,17 +209,6 @@ export default {
   width: fit-content;
   margin: auto;
   padding: 20px 0;
-}
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  justify-content: space-around;
-}
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #watermark {
   transform: rotate(180deg);

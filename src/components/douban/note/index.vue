@@ -1,19 +1,8 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
-    </div>
-    <el-dialog class='dialog-container' title="" :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
-    <div id='page-container'>
+    <tool @change="changeMode">
+    </tool>
+    <div id='DIV_1'>
       <div id="DIV_2">
       </div>
       <link href="//img3.doubanio.com/dae/accounts/resources/0246c88/shire/bundle.css" rel="stylesheet" type="text/css" id="LINK_4" />
@@ -289,7 +278,7 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
 import json from "./image.json";
 
 export default {
@@ -297,7 +286,6 @@ export default {
   data() {
     return {
       edit: false,
-      dialogVisible: false,
       avatar: json.avatar,
       newMenu: json.new,
       logo: json.logo,
@@ -344,26 +332,6 @@ export default {
         reader.onerror = error => reject(error);
       });
     },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#page-container");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(document.querySelector("#page-container"), {
-        // allowTaint: true,
-        height: height,
-        width: width
-      }).then(canvas => {
-        this.dialogVisible = true;
-        this.canvas = canvas;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -372,15 +340,10 @@ export default {
         this.avatar = res;
       });
       return true;
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -453,27 +416,6 @@ canvas {
   width: 100%;
   margin: auto;
   padding: 20px 0;
-}
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  > button {
-    margin: 0;
-    margin-right: 50px;
-  }
-}
-.dialog-footer {
-  display: block;
-}
-.dialog-container {
-  padding: 10px;
-  #image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
 }
 .watermark {
   transform: rotate(180deg);
