@@ -1,19 +1,8 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
-    </div>
-    <el-dialog class='dialog-container' :visible.sync="dialogVisible" @opened='showImage' width="95%" top='2vh'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
-    <div id='page-container'>
+    <tool @change="changeMode">
+    </tool>
+    <div id='DIV_1'>
       <main class="App-main" role="main">
         <div class="QuestionPage">
           <div>
@@ -282,14 +271,13 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
 import json from "./image.json";
 
 export default {
   name: "SinaSimple",
   data() {
     return {
-      dialogVisible: false,
       edit: false,
       nickname: "鲁迅",
       avatar: json.avatar,
@@ -317,7 +305,6 @@ export default {
       time: "2048-10-10",
       content: `某张截图是真还是假，我也不知道。我只知道，现如今“截图”造假的成本非常非常低，并且足以乱真！
         因此，我们在网络上看到任何截图时，都要“首先怀疑”其真实性。这样才不会被轻易带了节奏。`,
-      canvas: ""
     };
   },
   methods: {
@@ -332,43 +319,6 @@ export default {
         reader.onerror = error => reject(error);
       });
     },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#page-container");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(document.querySelector("#page-container"), {
-        allowTaint: true,
-        height: height,
-        width: width,
-        onclone: element => {
-          const svgElements = element.body
-            .querySelector("#page-container")
-            .getElementsByTagName("svg");
-
-          Array.from(svgElements).forEach((svgElement, index) => {
-            let color = "#7a859c";
-            if (index === 0 || index === 6 || index === 7) {
-              color = "#0079ff ";
-            }
-            if (index === 14 || index === 16) {
-              color = "#ffffff";
-            }
-            const bBox = svgElement.getBBox();
-            svgElement.setAttribute("fill", color);
-          });
-        }
-      }).then(canvas => {
-        this.dialogVisible = true;
-        this.canvas = canvas;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -377,15 +327,10 @@ export default {
         this.avatar = res;
       });
       return true;
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -449,43 +394,20 @@ export default {
     display: block;
   }
 }
-
-canvas {
-  transform: scale(0.9);
-}
 </style>
 <style scoped lang='scss'>
 .container {
   width: 100%;
   margin: auto;
   padding: 20px 0;
-  #page-container {
-    background: #f5f4f5;
-  }
 }
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  > button {
-    margin: 0;
-    margin-right: 50px;
-  }
-}
-.dialog-container {
-  padding: 10px;
-  #image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-}
-
 .watermark {
   transform: rotate(180deg);
   color: #8590a6;
   font-size: 14px;
   text-align: right;
+}
+#DIV_1 {
+  background: #f5f4f5;
 }
 </style>

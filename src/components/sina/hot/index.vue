@@ -1,18 +1,7 @@
 <template>
   <div class="container">
-    <div class='toolbar'>
-      <el-button type="primary" icon="el-icon-edit" size="medium" @click='changeMode' plain>{{edit ? '确认' : '编辑内容'}}</el-button>
-      <el-button type="success" icon='el-icon-success' size="medium" @click='generageScreenShot' plain>生成截图</el-button>
-    </div>
-    <el-dialog title="" :visible.sync="dialogVisible" @opened='showImage' width='40%'>
-      <div id='image-container'>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
-        </a>
-      </span>
-    </el-dialog>
+    <tool @change="changeMode">
+    </tool>
     <div id='page-container'>
       <div id="DIV_1">
         <div id="DIV_2">
@@ -65,13 +54,12 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import Tool from "@/components/Tool";
 
 export default {
   name: "hotSimple",
   data() {
     return {
-      dialogVisible: false,
       edit: false,
       search_0: "三体舰队即将抵达太阳系 怎么办？",
       search_1: "智子（三体人驻地球的大使）大杀特杀无辜群众",
@@ -83,7 +71,6 @@ export default {
       search_7: "失落之城“煞达罗苟斯”惊现魔物",
       search_8: "哈里·谢顿谈心理史学",
       search_9: "论第二基地的危险性",
-      canvas: ""
     };
   },
   methods: {
@@ -98,26 +85,6 @@ export default {
         reader.onerror = error => reject(error);
       });
     },
-    generageScreenShot() {
-      let screenShot = document.querySelector("#page-container");
-      let width = screenShot.offsetWidth;
-      let height = screenShot.offsetHeight;
-      html2canvas(document.querySelector("#page-container"), {
-        allowTaint: true,
-        height: height,
-        width: width
-      }).then(canvas => {
-        this.dialogVisible = true;
-        this.canvas = canvas;
-      });
-    },
-    showImage() {
-      const dom = document.querySelector("#image-container");
-      if (dom.childNodes.length) {
-        dom.removeChild(dom.childNodes[0]);
-      }
-      dom.appendChild(this.canvas);
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -126,15 +93,10 @@ export default {
         this.avatar = res;
       });
       return true;
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     }
+  },
+  components: {
+    Tool
   }
 };
 </script>
@@ -145,25 +107,12 @@ export default {
   width: 100%;
   margin: auto;
   padding: 20px 0;
-  #image-container {
-    width: fit-content;
-    margin: auto;
-  }
   #page-container {
     width: fit-content;
     margin: auto;
     .watermark {
       transform: rotate(180deg);
       margin-right: 12px;
-    }
-  }
-  .toolbar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    > button {
-      margin: 0;
-      margin-right: 50px;
     }
   }
 }
