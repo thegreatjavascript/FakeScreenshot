@@ -11,8 +11,8 @@
       </div>
       <span slot="footer" class="dialog-footer">
         <el-slider v-model="count" @change="toGreen"></el-slider>
-        <a id="download" download="shuirong.png">
-          <el-button type="primary" @click="download">下载图片</el-button>
+        <a id="download" download="shuirong.png" :href="image">
+          <el-button type="primary">下载图片</el-button>
         </a>
       </span>
     </el-dialog>
@@ -57,17 +57,9 @@ export default {
       this.toGreen(0);
     },
     toGreen(value) {
-      this.image = green(this.canvas, this.imageData, value).then(imageUrl => {
+      green(this.canvas, this.imageData, value).then(imageUrl => {
         this.image = imageUrl;
       });
-    },
-    download() {
-      let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
     },
     changeMode() {
       this.edit = !this.edit;
