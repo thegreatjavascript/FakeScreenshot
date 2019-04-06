@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     generageScreenShot() {
+      this.$Progress.start();
       let screenShot = document.querySelector("#DIV_1");
       let width = screenShot.offsetWidth;
       let height = screenShot.offsetHeight;
@@ -50,6 +51,7 @@ export default {
         this.imageData = data;
         this.canvas = canvas;
         this.dialogVisible = true;
+        this.$Progress.finish();
       });
     },
     showImage() {

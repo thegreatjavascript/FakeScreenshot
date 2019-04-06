@@ -78,12 +78,12 @@ export default {
   },
   mounted () {
     this.$router.beforeEach((to, from, next) => {
-      this.$Progress.start()
-      next()
-    })
+      this.$Progress.start();
+      next();
+    });
     this.$router.afterEach((to, from) => {
-      this.$Progress.finish()
-    })
+      this.$Progress.finish();
+    });
   }
 };
 </script>
