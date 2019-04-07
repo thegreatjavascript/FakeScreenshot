@@ -19,6 +19,7 @@
       <el-button size="medium" @click='route("/twitter")' plain>Twitter</el-button>
     </el-card>
     <router-view />
+    <vue-progress-bar></vue-progress-bar>
     <iframe src="https://ghbtns.com/github-btn.html?user=thegreatjavascript&repo=FakeScreenshot&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
     <a href="https://996.icu" target='_blank'><img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>
   </div>
@@ -74,6 +75,15 @@ export default {
     } else {
       this.dialogVisible = true;
     }
+  },
+  mounted () {
+    this.$router.beforeEach((to, from, next) => {
+      this.$Progress.start();
+      next();
+    });
+    this.$router.afterEach((to, from) => {
+      this.$Progress.finish();
+    });
   }
 };
 </script>
