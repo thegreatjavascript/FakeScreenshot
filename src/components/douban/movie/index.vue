@@ -103,7 +103,7 @@ export default {
       starVisible: false,
       edit: false,
       screenWriterVisible: false,
-      poster: json.poster,
+      poster: require("./alita.png"),
       title: "阿丽塔：战斗天使 Alita: Battle Angel",
       time: "2019",
       director: "罗伯特·罗德里格兹",

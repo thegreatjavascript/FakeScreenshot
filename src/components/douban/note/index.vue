@@ -72,7 +72,7 @@
         <div id="DIV_57">
           <div id="DIV_58">
             <div id="DIV_59">
-              <img :src='logo'>
+              <img>
             </div>
             <div id="DIV_61">
               <form action="https://www.douban.com/search" method="get" id="FORM_62">
@@ -103,7 +103,7 @@
                   <a href="https://www.douban.com/explore" id="A_76">浏览发现</a>
                 </li>
                 <li id="LI_77">
-                  <a href="https://www.douban.com/gallery" id="A_78">话题广场<img :src="newMenu" alt="new" id="IMG_79" /></a>
+                  <a href="https://www.douban.com/gallery" id="A_78"><span>话题广场</span></a>
                 </li>
               </ul>
             </div>
@@ -149,7 +149,7 @@
                   <div id="DIV_117">
                     <div id="DIV_118">
                       <div id="DIV_119">
-                        <a href="https://www.douban.com/accounts/register?reason=like" id="A_120">赞</a>
+                        <a href="https://www.douban.com/accounts/register?reason=like" id="A_120"><span id='thumb'>赞</span></a>
                       </div>
                       <div id="DIV_121">
                         <div id="DIV_122">
@@ -287,8 +287,6 @@ export default {
     return {
       edit: false,
       avatar: json.avatar,
-      newMenu: json.new,
-      logo: json.logo,
       nickname: "FakeScreenshot",
       slogan: "对抗假截图",
       description: "我给自己建起了一座非手造的纪念碑",
@@ -344,6 +342,36 @@ export default {
   },
   components: {
     Tool
+  },
+  mounted() {
+    const logo = new Image();
+    logo.src = json.logo;
+    logo.crossOrigin = "Anonymous";
+    document.querySelector("#DIV_59").appendChild(logo);
+
+    const newMenu = new Image();
+    newMenu.src = json.new;
+    newMenu.crossOrigin = "Anonymous";
+    newMenu.style = "position:absolute;";
+    document.querySelector("#A_78").appendChild(newMenu);
+
+    const share = new Image();
+    share.src = json.share;
+    share.style = "width:16px;height:16px;position:relative;top:3px;";
+    share.crossOrigin = "Anonymous";
+    document.querySelector("#SPAN_128").appendChild(share);
+
+    const search = new Image();
+    search.src = json.search;
+    search.style = "width:15px;height:14px;position:relative;top:8px;left:8px;";
+    search.crossOrigin = "Anonymous";
+    document.querySelector("#DIV_69").prepend(search);
+
+    const like = new Image();
+    like.src = json.like;
+    like.style = "width:15px;height:15px;position:absolute;left:5px;top:4px;";
+    like.crossOrigin = "Anonymous";
+    document.querySelector("#A_120").prepend(like);
   }
 };
 </script>

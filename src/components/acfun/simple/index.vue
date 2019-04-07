@@ -12,7 +12,7 @@
             <ul class="fl">
               <h1 class="fl logo">
                 <a>
-                  <img src="http://cdn.aixifan.com/acfun-pc/2.6.48/img/logo.png" width="88" height="27">
+                  <img :src="logo" width="88" height="27">
                 </a>
               </h1>
               <li data-category="112" data-cid="177">
@@ -57,8 +57,8 @@
             </ul>
             <ol id="header-guide" class="fr header-guide">
               <li class="guide-item guide-user user-logined">
-                <a target="_blank" class="user-avatar item" style="display: inline;">
-                  <img src="http://cdn.aixifan.com/dotnet/20120923/style/image/avatar.jpg" width="30" height="30">
+                <a target="_blank" class="user-avatar item" style="display: inline-block;">
+                  <img :src="user" width="30" height="30">
                 </a>
                 <a target="_blank" class="item user-login">登录/注册</a>
                 <span class="user-message-count" v-html='msgnum' :contenteditable="edit" @input="changeMessage">2</span>
@@ -68,7 +68,7 @@
                     <a class="fr icon icon-logout user-logout">退出</a>
                   </p>
                   <div id="user-message" class="user-message">
-                    <ul id="user-message-con" data-count="2" data-url="http://www.acfun.cn/member/#area=push">
+                    <ul id="user-message-con" data-count="2" data-url="">
                       <li>
                         <a class="unit" target="_blank">
                           您有
@@ -105,8 +105,8 @@
               </li>
             </ol>
             <div id="search-box" class="fr search-box">
-              <form id="search-form" target="_blank" method="get" action="http://www.acfun.cn/search/">
-                <input id="search-text" type="text" placeholder="【AGN】鬼泣5 ACer自己的评测" data-url="http://www.acfun.cn/a/ac5001046" value autocomplete="off" maxlength="30">
+              <form id="search-form" target="_blank" method="get" action="">
+                <input id="search-text" type="text" placeholder="【AGN】鬼泣5 ACer自己的评测" value autocomplete="off" maxlength="30">
                 <button id="search-btn" class="search-btn">
                   <i class="icon icon-search"></i>
                   <span>搜索</span>
@@ -145,15 +145,15 @@
                     </div>
                     <div class="census-right">
                       <div class="collectcount">
-                        <i class="icon"></i>
+                        <i class="icon"><img :src='like'></i>
                         <span>60</span>
                       </div>
                       <div class="bananacount">
-                        <i class="icon"></i>
+                        <i class="icon"><img :src='banana'></i>
                         <span>7</span>
                       </div>
                       <div class="sharecount">
-                        <i class="icon"></i>
+                        <i class="icon"><img :src='share'></i>
                         <div class="sharehead">
                           <p>分享文章到</p>
                           <div id="bdshare1" data-bd-bind="1552284271746" class="share_box bdsharebuttonbox bdshare-button-style0-16">
@@ -167,7 +167,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="emoji" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048135861.png&quot;);"></div>
+                  <div class="emoji"><img :src='emoji'></div>
                 </div>
               </section>
               <section class="art-subject">
@@ -201,40 +201,20 @@
                   <div id="art-operate">
                     <div class="art-collect">
                       <div class="icon">
-                        <div class="img"></div>
+                        <div class="img"><img :src='collect'></div>
                       </div>
                       <span data-status="0" class="collect">收藏</span>
                     </div>
                     <div class="art-banana">
                       <div class="icon">
-                        <div class="img"></div>
+                        <div class="img"><img :src='bananacount'></div>
                         <div class="push1"></div>
                       </div>
                       <span data-status="0" class="banana">投蕉</span>
                     </div>
                     <div class="art-attitude">
-                      <div class="icon" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048135861.png&quot;);"></div>
+                      <div class="icon"><img :src='attitude'></div>
                       <span class="attitude">你的态度</span>
-                      <div id="attitude-all" class="clearfix">
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048135861.png" at-index="0" at-id="1" title="at01" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048135861.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048383512.png" at-index="1" at-id="2" title="at02" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048383512.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048389889.png" at-index="2" at-id="3" title="at03" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048389889.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048397323.png" at-index="3" at-id="4" title="at04" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048397323.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048932099.png" at-index="4" at-id="5" title="at05" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048932099.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048413184.png" at-index="5" at-id="6" title="at06" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048413184.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048421370.png" at-index="6" at-id="7" title="at07" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048421370.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510049022057.PNG" at-index="7" at-id="8" title="at08" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510049022057.PNG&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048433787.png" at-index="8" at-id="9" title="at09" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048433787.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048439352.png" at-index="9" at-id="10" title="at10" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048439352.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048449031.png" at-index="10" at-id="11" title="at11" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048449031.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048457101.png" at-index="11" at-id="12" title="at12" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048457101.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048465023.png" at-index="12" at-id="13" title="at13" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048465023.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048471249.png" at-index="13" at-id="14" title="at14" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048471249.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048476850.png" at-index="14" at-id="15" title="at15" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048476850.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048482297.png" at-index="15" at-id="16" title="at16" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048482297.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048487509.png" at-index="16" at-id="17" title="at17" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048487509.png&quot;); display: list-item;"></li>
-                        <li data-original="http://imgs.aixifan.com/cms/2017_11_07/1510048493240.png" at-index="17" at-id="18" title="at18" class="atd lazy" style="background-image: url(&quot;http://imgs.aixifan.com/cms/2017_11_07/1510048493240.png&quot;); display: list-item;"></li>
-                      </div>
                     </div>
                   </div>
                   <div id="bdshare" data-bd-bind="1552284271746" class="share_box fr bdsharebuttonbox bdshare-button-style0-16">
@@ -255,7 +235,6 @@
               <section id="up-info">
                 <div class="up-detail">
                   <img class="upcover" :src="picture" alt="">
-
                   <a target="_blank" class="upname">
                     <p v-html='upname' :contenteditable="edit" @input="changeupname" class="name float">{{upname}}</p>
                     <p class="desc"></p>
@@ -283,7 +262,7 @@
               <section id="up-contributions" data-impr-config="{&quot;id&quot;:&quot;article-new-contribute&quot;,&quot;selector&quot;:&quot;.weblog-item&quot;,&quot;pullid&quot;:&quot;5277176762D636AF&quot;,&quot;reqid&quot;:&quot;5277176762D636AF_76cf5f6fc32a6b5cc05d461e935e381d_article-new-contribute&quot;}">
                 <div class="ctb-head">
                   <h1 class="ctb-title">最新投稿</h1>
-                  <a target="_blank" class="showall">全部</a>
+                  <a target="_blank" class="showall">全部&nbsp;<img :src='arrowRight'></a>
                 </div>
                 <div class="contributions">
                   <div class="contribution weblog-item" data-show="true">
@@ -292,11 +271,11 @@
                     </p>
                     <div class="contb-count">
                       <div class="view-count">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="count num">1.7万</span>
                       </div>
                       <div class="comm-count">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="count num">313</span>
                       </div>
                     </div>
@@ -334,11 +313,11 @@
                     </div>
                     <div class="relate-total">
                       <div class="view-total">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="total num">1.6万</span>
                       </div>
                       <div class="comm-total">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="total num">36</span>
                       </div>
                     </div>
@@ -349,11 +328,11 @@
                     </div>
                     <div class="relate-total">
                       <div class="view-total">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="total num">6,812</span>
                       </div>
                       <div class="comm-total">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="total num">10</span>
                       </div>
                     </div>
@@ -364,11 +343,11 @@
                     </div>
                     <div class="relate-total">
                       <div class="view-total">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="total num">5,340</span>
                       </div>
                       <div class="comm-total">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="total num">6</span>
                       </div>
                     </div>
@@ -379,11 +358,11 @@
                     </div>
                     <div class="relate-total">
                       <div class="view-total">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="total num">3,952</span>
                       </div>
                       <div class="comm-total">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="total num">5</span>
                       </div>
                     </div>
@@ -394,11 +373,11 @@
                     </div>
                     <div class="relate-total">
                       <div class="view-total">
-                        <i class="view"></i>
+                        <i class="view"><img :src='view'></i>
                         <span class="total num">5,372</span>
                       </div>
                       <div class="comm-total">
-                        <i class="comm"></i>
+                        <i class="comm"><img :src='comment'></i>
                         <span class="total num">11</span>
                       </div>
                     </div>
@@ -433,6 +412,7 @@
 
 <script>
 import Tool from "@/components/Tool";
+import json from "./image.json";
 
 export default {
   data() {
@@ -461,15 +441,26 @@ export default {
       time: "2019年03月10日 18:31:37",
       mentionPerson: "",
       isMentioned: false,
-      picture:
-        "http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201903/10183608dmsp7ht0.jpg",
+      picture: json.avatar,
+      logo: json.logo,
+      star: json.star,
+      like: json.like,
+      banana: json.banana,
+      share: json.share,
+      emoji: json.emoji,
+      user: json.user,
+      collect: json.collect,
+      bananacount: json.bananacount,
+      attitude: json.attitude,
+      view: json.view,
+      comment: json.comment,
+      arrowRight: json.arrowRight,
       imageUrl: ""
     };
   },
   methods: {
     changetime(e) {
       let titleText = e.target.innerHTML;
-      console.log(titleText);
       this.time = titleText;
     },
     changeMessage(e) {

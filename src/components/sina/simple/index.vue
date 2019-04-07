@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <tool @change="changeMode">
-        <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
-            <el-button type="warning" icon='el-icon-success' size="medium" plain>添加图片</el-button>
-        </el-upload>
-        <el-button type="info" icon='el-icon-info' size="medium" @click='random' plain>随机一下</el-button>
+      <el-upload :show-file-list="false" action="" :on-success="handlePicSuccess" :before-upload="beforePicUpload">
+        <el-button type="warning" icon='el-icon-success' size="medium" plain>添加图片</el-button>
+      </el-upload>
+      <el-button type="info" icon='el-icon-info' size="medium" @click='random' plain>随机一下</el-button>
     </tool>
     <el-dialog title="" :visible.sync="isMentioned">
       <div>
@@ -42,7 +42,7 @@
         </div>
         <div id="DIV_18">
           <div id="DIV_19">
-            <a href="" id="A_20" v-html='nickname' :contenteditable="edit"></a> <a title="微博会员" href="http://vip.weibo.com/personal?from=main" id="A_21"><em id="EM_22"></em></a>
+            <a href="" id="A_20" v-html='nickname' :contenteditable="edit"></a> <a title="微博会员" href="" id="A_21"><em id="EM_22"><img :src='vip'></em></a>
           </div>
           <div id="DIV_23">
             <a name="4316491173741841" href="/6423850204/H6V0FfHqh?from=page_1005056423850204_profile&amp;wvr=6&amp;mod=weibotime" :contenteditable="edit" v-html='time' id="A_24"></a>&nbsp;来自&nbsp;<a href="http://vip.weibo.com/prividesc?priv=1006&amp;from=feed" id="A_25" :contenteditable="edit" v-html='from'></a>
@@ -51,11 +51,6 @@
           <div id="DIV_26">
           </div>
           <div id="DIV_27" v-html='content' :contenteditable="edit" @input="changeContent">
-          </div>
-
-        </div>
-        <div id="DIV_35">
-          <div id="DIV_36">
           </div>
         </div>
       </div>
@@ -97,6 +92,7 @@ export default {
       edit: false,
       nickname: "鲁迅",
       avatar: json.avatar,
+      vip: json.vip,
       reblogNumber: 99999,
       commentNumber: 99999,
       starNumber: 99999,

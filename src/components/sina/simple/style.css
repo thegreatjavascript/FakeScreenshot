@@ -1,16 +1,6 @@
 @font-face {
     font-family: "wbficonregular";
-    src: url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.eot?id=201710311000");
-    src: url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.eot?id=201710311000#iefix")
-        format("embedded-opentype"),
-      url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.svg?id=201710311000")
-        format("svg"),
-      url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.woff?id=201710311000")
-        format("woff"),
-      url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.ttf?id=201710311000")
-        format("truetype");
-    src: url("https://img.t.sinajs.cn/t4/appstyle/vip_v2/images/common/font/vipwbficon.eot?id=201710311000")
-      \9;
+    src: url("../../../assets/font/vipwbficon.woff");
     font-weight: normal;
     font-style: normal;
   }
@@ -757,8 +747,6 @@
     perspective-origin: 8px 7px;
     transform-origin: 8px 7px;
     caret-color: rgb(235, 115, 80);
-    background: rgba(0, 0, 0, 0)
-    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAABfGlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGAqSSwoyGFhYGDIzSspCnJ3UoiIjFJgv8PAzcDDIMRgxSCemFxc4BgQ4MOAE3y7xsAIoi/rgsxK8/x506a1fP4WNq+ZclYlOrj1gQF3SmpxMgMDIweQnZxSnJwLZOcA2TrJBUUlQPYMIFu3vKQAxD4BZIsUAR0IZN8BsdMh7A8gdhKYzcQCVhMS5AxkSwDZAkkQtgaInQ5hW4DYyRmJKUC2B8guiBvAgNPDRcHcwFLXkYC7SQa5OaUwO0ChxZOaFxoMcgcQyzB4MLgwKDCYMxgwWDLoMjiWpFaUgBQ65xdUFmWmZ5QoOAJDNlXBOT+3oLQktUhHwTMvWU9HwcjA0ACkDhRnEKM/B4FNZxQ7jxDLX8jAYKnMwMDcgxBLmsbAsH0PA4PEKYSYyjwGBn5rBoZt5woSixLhDmf8xkKIX5xmbARh8zgxMLDe+///sxoDA/skBoa/E////73o//+/i4H2A+PsQA4AJHdp4IxrEg8AAAG5SURBVDgRxVJNSwJRFD2aWrqQUIJapASBVhC1KNpEtGvXotBdtAvyb/QXCqJF1C6poJ8QQUQFrfowWpQGhaFk+JVf071Pp/eckSgQOnBn7jvvnjP33TcWjYA2wtpGL2H1D4bb4wDHL/Fzh/k3aaPmkjVlFtOlsDAdAkoeigoQPKqL7uYBh40iDXiigKvHZMZEs2HqFiisArYZWfx+Vc+7lWNXjgHnBuAdknWNTB45QUXPs4B1ErXTBxTndqAlU4A7KIJz5niPa0QtawyQHV70An2LqO7GUI6SiGDxu9G5Pi3yz8gJtKcPkdtDg+hYCgAv+8DEq+D0h+ywRFQt923GBcKAOOZ1M+bFB5lnjQE0ZQVUZOl3QUvkJcnCBpJdLj0FQueUeylGBOc7uxZvaZildSULe9iL8lYJWoZumEGcCl2ocvGpuilz0nB4D7gJ07yDsKXcqBxmaIYOOm69W+uoE7gHVHErc3kpbB87AB4jgN/HKxPiyzm0MuGP6LzskOWBBTJdA6oFk5mRUDtV95oNeYd+PQwU1RolpxE0oHfES9XcbDi2Alxu6jrDu9QkNmyKZfMMW1X8kfsCspmmL1lUnuQAAAAASUVORK5CYII=');
     border: 0px none rgb(235, 115, 80);
     font: normal normal 400 normal 12px / 15.6px Arial, "PingFang SC",
       "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -1117,50 +1105,6 @@
       "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     outline: rgb(51, 51, 51) none 0px;
   } /*#DIV_35:before*/
-  
-  #DIV_36 {
-    background-position: 0% 50%;
-    color: rgb(51, 51, 51);
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    text-decoration: none solid rgb(51, 51, 51);
-    top: 0px;
-    width: 100%;
-    column-rule-color: rgb(51, 51, 51);
-    caret-color: rgb(51, 51, 51);
-    animation: stepsV1 0.65s steps(19, end) 0s 1 normal forwards running;
-    background: rgba(0, 0, 0, 0)
-      url("https://img.t.sinajs.cn/t6/skin/public/like/p_0000_pc.png?version=201902242030")
-      no-repeat scroll 0% 50% / 2200px 110px padding-box border-box;
-    border: 0px none rgb(51, 51, 51);
-    font: normal normal 400 normal 12px / 15.6px Arial, "PingFang SC",
-      "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    outline: rgb(51, 51, 51) none 0px;
-    overflow: hidden;
-  } /*#DIV_36*/
-  
-  #DIV_36:after {
-    color: rgb(51, 51, 51);
-    text-decoration: none solid rgb(51, 51, 51);
-    column-rule-color: rgb(51, 51, 51);
-    caret-color: rgb(51, 51, 51);
-    border: 0px none rgb(51, 51, 51);
-    font: normal normal 400 normal 12px / 15.6px Arial, "PingFang SC",
-      "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    outline: rgb(51, 51, 51) none 0px;
-  } /*#DIV_36:after*/
-  
-  #DIV_36:before {
-    color: rgb(51, 51, 51);
-    text-decoration: none solid rgb(51, 51, 51);
-    column-rule-color: rgb(51, 51, 51);
-    caret-color: rgb(51, 51, 51);
-    border: 0px none rgb(51, 51, 51);
-    font: normal normal 400 normal 12px / 15.6px Arial, "PingFang SC",
-      "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    outline: rgb(51, 51, 51) none 0px;
-  } /*#DIV_36:before*/
   
   #DIV_37 {
     color: rgb(51, 51, 51);

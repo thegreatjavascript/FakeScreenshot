@@ -9,7 +9,7 @@
       <div id='image-container'>
         <img id="image" :src="image">
       </div>
-      <span slot="footer" class="dialog-footer">
+      <span slot="footer" class="slider-dialog-footer">
         <el-slider v-model="count" @change="toGreen"></el-slider>
         <a id="download" download="shuirong.png">
           <el-button type="primary" @click="download">下载图片</el-button>
@@ -40,12 +40,12 @@ export default {
       let width = screenShot.offsetWidth;
       let height = screenShot.offsetHeight;
       html2canvas(screenShot, {
-        allowTaint: true,
-        useCORS: true,
+        allowTaint: false,
+        useCORS: false,
         height: height,
         width: width
       }).then(canvas => {
-        let ctx = canvas.getContext('2d');
+        let ctx = canvas.getContext("2d");
         let data = ctx.getImageData(0, 0, canvas.width, canvas.height);
         this.imageData = data;
         this.canvas = canvas;
@@ -63,15 +63,11 @@ export default {
     },
     download() {
       let download = document.getElementById("download");
-      let image = document
-        .querySelector("canvas")
-        .toDataURL("image/png")
-        .replace("image/png", "image/octet-stream");
-      download.setAttribute("href", image);
+      download.setAttribute("href", this.image);
     },
     changeMode() {
       this.edit = !this.edit;
-      this.$emit('change');
+      this.$emit("change");
     }
   }
 };
@@ -91,5 +87,13 @@ export default {
 #image {
   width: 100%;
   height: 100%;
+}
+
+.slider-dialog-footer {
+  display: flex;
+  justify-content: space-around;
+  .el-slider {
+    width: 80%;
+  }
 }
 </style>

@@ -41,10 +41,10 @@
             <div id="DIV_33">
               <ul id="UL_34">
                 <li id="LI_35">
-                  <a href="/" id="A_36"> <span id="SPAN_37">首页</span><i id="I_38"></i></a>
+                  <a href="/" id="A_36"><i id="I_38"></i><span id="SPAN_37">首页</span></a>
                 </li>
                 <li id="LI_39">
-                  <a id="A_40" href="/apps?utm_medium=desktop&amp;utm_source=navbar-apps"><span id="SPAN_41">下载App</span><i id="I_42"></i></a>
+                  <a id="A_40" href="/apps?utm_medium=desktop&amp;utm_source=navbar-apps"><i id="I_42"></i><span id="SPAN_41">下载App</span></a>
                 </li>
                 <li id="LI_43">
                   <form action="/search" method="get" id="FORM_44">
@@ -150,7 +150,7 @@ export default {
       「3」
       我最先想到的其实并不是「FakeScreenshot」项目，而是：运营一个专门替别人“求证”某事真实性的微博账户。当然，也不是所有的事情我都可以“搞定”，毕竟我只是一个没有什么社会能量的普通程序员，但仍旧有一些事情我可以求证出来。不过因为近期时间已经被其他事情占用了，因此这个想法一直没有实施。后面我才想到何不做一个“截图造假”的网站，这样任何知道此网站存在的人，心里都会明白：“哦，原来各大网站截图都是可以轻易伪造的啊”。这样当他再次看到其他截图的时候，会想起来此网站的存在，然后就会下意识地怀疑截图的真实性了。
       这也就是本项目存在的意义了！
-      `,
+      `
     };
   },
   methods: {
