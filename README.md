@@ -1,49 +1,57 @@
-# 虚假截图助手/FakeScreenshot
-> 这是一个可以“伪造”微博、知乎、豆瓣、简书等网站界面截图的网站。但本网站是为了告诉（不懂编程的）普通人：不要轻易相信网上看到的“截图”！
+# Fake Screenshot
+> This is a website that can **forge** twitter.com, weibo.com, zhihu.com, douban.com, jianshu.com, and other website's screenshots, but the purpose of this website is to tell (people that do not understand programming) ordinary people: **Do not trust those "screenshots" seen online easily!**
 
 
 
-#### 写在前面
+* [中文版](./README.zh.md)
+
+
+
+#### Written in front
 
 ---
 
-如果有一天你在群里看到这么一张图，你第一反应是什么？
+If one day you see such a picture online, what is your first reaction?
 
-![微博截图](https://ww1.sinaimg.cn/large/007i4MEmgy1g0jrh5ez40j30h2045t91.jpg)
+![微博截图](https://i.loli.net/2019/05/21/5ce3a7d751e1496847.png)
 
-“卧槽，这么快？”
+“holy shit, so fast?”
 
-“正好这段时间没事做，学一下”
+“have the time recently, Learn!”
 
-“和2.0有什么区别啊？”
+“What's the difference with 2.0?”
 
-“求你们别更了，我学不动了.jpg ？”
+"How is the compatibility with TS?"
 
-"支持TS吗？"
-
-**不管怎样，只要第一反应不是怀疑其真实性，那么你就是“假截图”的受害者！**
+**In any case, as long as the first reaction is not to doubt it's authenticity, then you are the victim of "fake screenshot"!**
 
 
 
-我们都曾看到过各种截屏：包括不限于`知乎`、`微博`、`豆瓣`、`NGA`、`V2EX`、`QQ`、`微信` 、`各种新闻站`...
+We have all seen various screenshots: including but not limited to `Twitter`, `Facebook`, `Reddit`, `Youtube`, `Tumblr`, `media reports`...
 
-如果那些截屏内容只涉及到段子还好，但多数情况不是。它们往往和某事/某人有关，这（假截图）就**极有可能**导致人们对该事/人产生错误的看法（之所以说错误，是因为我认为**大多数**假截图的制作者都怀有不良动机。）
+That will be fine if those screenshots only involved jokes or life stuff, but some of them are not. They are often related to something/someone. This (fake screenshot) is very likely to lead people to make a wrong opinion about the thing/ Person (the reason why I say so is I think most fake pictures producers have a bad motivation.)
 
-另外，**多数人并不会去主动验证该截图描述事情的真伪**（不这么做的原因这里不做讨论），这是“假截图”泛滥的重要原因之一。
+In addition, **most people will not actively verify the authenticity of the screenshot **(the reason for not doing this is not discussed here), which is one of the important reasons for the proliferation of "fake screenshots".
 
-**对此我们能做什么呢？**
+**So what can I do?**
 
-三个方向：1. 阻止传播（极难实现）2. 告诉人们应该主动去求证（很难实现）3. 至少告诉人们首先应该持怀疑态度（有些可能性）。
+Three directions: 
 
-我选择了第三个方向。而方法呢，我选择反其道而行之，开发一个**帮助人们非常简单地制作常见网站、软件的虚假截图（当然，内容可以由用户自定义）** 的网站（针对QQ、微信等手机软件的虚假截图制作，我们也考虑开发一款App）。
+1. Prevent the spread of screenshots (**very difficult to achieve**) 
+2. Tell people to take the initiative to verify (**hard to achieve**)
+3. **At least tell people to keep skeptical (is possible).**
 
-**通过本项目制作出来的假截图的传播来告诉人们这样一件事：“哦，原来各大网站/App的截图都可以造假啊！”**
+I chose the third direction. I chose to do the opposite, **to write a website that helps people to make fake screenshots** of common websites and software (of course, the content can be customized by the user) easily.
 
-> 后期如何传播我们的“造假”网站？
+**Tell people (ordinary person who does not understand programming) something like this: "Holy shit, the screenshots of the websites/apps can be faked!**
+
+> How to spread our "falsification" website?
 >
-> 我们项目制作出来假截图时，可以在右下角添加一个“非常不明显”的水印来指向我们的“造假”网站
+> When people make a fake screenshot, we will add a "very insignificant" watermark pointing to our site.
 
-那么你说下一次，这个人再看到这种截图的时候，他会不会第一时间对内容保持怀疑呢？
+
+
+So you think that when this person sees those screenshots again, will he be suspicious of the content subconsciously?
 
 
 
@@ -51,35 +59,23 @@
 
 ---
 
-**假截图就全是不好的吗？**
+**Is the fake screenshot all bad?**
 
-答案当然是否定的。另外，这类问题实在没什么意义，因为这个世界上就没有几件能 “100%肯定” 的事情。（建议尽早摒弃这种“非此即彼”的极端思想，于人生无益）
+Of course not. "all" is meaningless.
 
-**这个项目的意义在哪里？**
+**What is the significance of this project?**
 
-告诉人们看到任何截图的时候都应该保持怀疑。
+Tell people to be suspicious when they see any screenshots.
 
-**我不会Vue，只会React/Angular可以参与吗？**
+**Can I join this?**
 
-我选择某个技术栈的原因只是想确保一点，项目能进行下去，因为我会Vue、React、ReactNative，使用这三个技术栈，我能把项目推进下去（因为很可能大多数代码都是我来写 🤣 ）所以就不考虑Angular了。
-
-所以你只要掌握Vue（现在项目是Vue，看有没有人参与吧，再讨论要不要换React）、React、ReactNative中的任一项，都可以参与进来。
+Developer who knows `Vue.js` and designer are welcomed.
 
 
 
-#### 如何贡献代码
+**Collaborative process：**
 
-------
-
-**Coding前你需要知道：**
-
-1. 项目待办事项由 [Github Projects](https://github.com/thegreatjavascript/FakeScreenshot/projects) 管理
-2. 样式100%模仿实现思路：相关的HTML、CSS不是自己实现的，而是利用Chrome扩展SnappySnippet提取的某DOM的HTML及CSS。但这个插件在有的时候无法正确提取出某些HTML、CSS。所以方法二：IE/Edge浏览器控制台，DOM右键菜单有个提取HTML及样式的功能。得到目标HTML、CSS后，就可以添加到项目中，然后利用Vue的双向绑定等特性进行“改造”了
-3. 多参考其他代码
-
-
-
-**协作流程：**
+---
 
 1. Fork
 2. Write code
@@ -87,15 +83,11 @@
 
 
 
-> 开发时遇到问题也可以在issue区提出来，我们一起讨论。
-
-
-
-#### 如何运行
+#### Getting Started
 
 ---
 
-确保你本地有Vue开发环境
+make sure you have Front-End development environment locally.
 
 ```bash
 git clone git@github.com:thegreatjavascript/FakeScreenshot.git
@@ -104,5 +96,4 @@ yarn // or npm install
 yarn run dev // or npm run dev
 ```
 
-浏览器打开：http://localhost:8080
-
+Open your browser：http://localhost:8080
