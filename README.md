@@ -31,7 +31,7 @@ We have all seen various screenshots: including but not limited to `Twitter`, `F
 
 That will be fine if those screenshots only involved jokes or life stuff, but some of them are not. They are often related to something/someone. This (fake screenshot) is very likely to lead people to make a wrong opinion about the thing/ Person (the reason why I say so is I think most fake pictures producers have a bad motivation.)
 
-In addition, **most people will not actively verify the authenticity of the screenshot **(the reason for not doing this is not discussed here), which is one of the important reasons for the proliferation of "fake screenshots".
+In addition, **most people will not actively verify the authenticity of the screenshot** (the reason for not doing this is not discussed here), which is one of the important reasons for the proliferation of "fake screenshots".
 
 **So what can I do?**
 
