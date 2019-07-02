@@ -86,6 +86,17 @@ Developer who knows `Vue.js` and designer are welcomed.
 #### Getting Started
 
 ---
+make sure you have [docker](https://docs.docker.com/v17.12/install/) environment locally.
+```bash
+docker run -d --name fakescreenshot -p 8000:8000 --rm  kebyn/fakescreenshot
+```
+OR
+```bash
+cd build/docker
+bash build.sh
+bash start.sh
+```
+---
 
 make sure you have Front-End development environment locally.
 
@@ -96,4 +107,4 @@ yarn // or npm install
 yarn run dev // or npm run dev
 ```
 
-Open your browser：http://localhost:8080
+Open your browser：http://localhost:8000

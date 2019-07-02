@@ -98,6 +98,17 @@
 #### 如何运行
 
 ---
+确保你本地安装 [docker](https://docs.docker.com/v17.12/install/) .
+```bash
+docker run -d --name fakescreenshot -p 8000:8000 --rm  kebyn/fakescreenshot
+```
+或者
+```bash
+cd build/docker
+bash build.sh
+bash start.sh
+```
+---
 
 确保你本地有Vue开发环境
 
@@ -108,5 +119,5 @@ yarn // or npm install
 yarn run dev // or npm run dev
 ```
 
-浏览器打开：http://localhost:8080
+浏览器打开：http://localhost:8000
 
