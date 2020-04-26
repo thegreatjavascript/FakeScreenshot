@@ -4,6 +4,7 @@
       <div>
         <span :class="{ active: !isHelpMode }" @click="isHelpMode = false">检测页</span>
         <span :class="{ active: isHelpMode }" @click="isHelpMode = true">使用指南</span>
+        <a href="https://github.com/thegreatjavascript/FakeScreenshot" target="_blanket">项目主页</a>
       </div>
     </div>
     <div class="check" v-if="!isHelpMode">
@@ -124,7 +125,8 @@ h3 {
       display: flex;
       align-items: center;
     }
-    span {
+    span,
+    a {
       margin: 0 20px;
       display: inline-block;
       position: relative;
@@ -208,6 +210,7 @@ h3 {
     }
     p {
       margin: 5px auto;
+      line-height: 1.8;
     }
     p.bottom-30 {
       margin-bottom: 30px;
@@ -263,6 +266,10 @@ h3 {
       height: 100%;
       mix-blend-mode: color-burn;
     }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }
 </style>
