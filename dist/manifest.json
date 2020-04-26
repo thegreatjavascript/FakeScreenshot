@@ -1,0 +1,45 @@
+{
+  "name": "FakeScreenshot",
+  "description": "FakeScreenshot/虚假截图制作工具：截图 = 实锤？相信你就输了！",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab"
+  ],
+  "icons": {
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "browser_action": {
+    "default_title": "FakeScreenshot",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "jquery.js",
+        "jquery.upload.js",
+        "page.js"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  },
+  "web_accessible_resources": [
+    "src/options/options.html"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

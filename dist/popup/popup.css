@@ -1,0 +1,59 @@
+@charset "UTF-8";
+:root {
+  --main-color: #de335e;
+  --text-color: #606266;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  padding: 10px 20px;
+}
+h1 {
+  color: var(--main-color);
+  font-size: 20px;
+  padding: 0;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+blockquote {
+  padding: 0 1em;
+  color: var(--text-color);
+  border-left: 0.25em solid var(--main-color);
+}
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: break-all;
+}
+.route {
+  cursor: pointer;
+}
+.m-bottom {
+  margin-bottom: 10px;
+}
+.m-bottom-5 {
+  margin-bottom: 5px;
+}
+.m-bottom-20 {
+  margin-bottom: 20px;
+}
+h3,
+.route {
+  color: var(--main-color);
+}
+footer {
+  margin-top: 20px;
+}
+footer a {
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+

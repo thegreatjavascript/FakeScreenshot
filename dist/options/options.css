@@ -1,0 +1,125 @@
+:root {
+  --main-color: #de335e;
+  --text-color: #606266;
+}
+*,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  font-family: cursive;
+  font-size: 14px;
+  line-height: 1;
+}
+.container .help {
+    margin: 5vh auto;
+    width: 90vw;
+}
+.container .help h3 {
+      color: var(--main-color);
+      text-align: center;
+      margin-bottom: 10px;
+}
+.container .help .content {
+      display: flex;
+      justify-content: space-between;
+}
+.container .help .content .card video {
+        width: 29vw;
+}
+.container .help .last {
+      margin: auto;
+      width: 50vw;
+}
+.container .help .last video {
+        width: 100%;
+}
+.container h1 {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.container header {
+    margin: 5vh auto;
+    width: 60%;
+}
+.container header h3 {
+      font-weight: bold;
+      font-size: 25px;
+      font-size: 19px;
+      margin-top: 10px;
+}
+.container header h3 span {
+        font-size: 20px;
+        margin-right: 3px;
+        display: inline-block;
+}
+.container header .top-50 {
+      margin-top: 50px;
+}
+.container header strong {
+      display: inline-block;
+      margin: 0 2px;
+      color: var(--main-color);
+}
+.container header p {
+      margin: 5px auto;
+}
+.container header p.bottom-30 {
+      margin-bottom: 30px;
+}
+.container header .big {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 30px;
+      color: var(--main-color);
+}
+.container header .upload {
+      width: 70px;
+      height: 70px;
+      position: relative;
+      box-shadow: 0 0 5px #eee;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: auto;
+}
+.container header .upload svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        box-sizing: border-box;
+}
+.container header .upload input {
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 0;
+}
+.container section {
+    width: 100%;
+    position: relative;
+    background: black;
+    mix-blend-mode: color-burn;
+}
+.container section .preview {
+      width: 100%;
+      display: none;
+}
+.container section .cover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: black;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: color-burn;
+}
+
