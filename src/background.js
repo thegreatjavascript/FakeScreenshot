@@ -69,7 +69,9 @@ const options7 = {
   title: '截图检测页',
   visible: true,
   contexts: ['all'],
-  onclick: routeToOptions,
+  onclick: () => {
+    routeToOptions(0);
+  },
 };
 chrome.contextMenus.create(options7);
 

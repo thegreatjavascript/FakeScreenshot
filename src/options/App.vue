@@ -1,5 +1,11 @@
 <template>
   <div class="container">
+    <div class="head">
+      <div>
+        <span :class="{ active: !isHelpMode }" @click="isHelpMode = false">检测页</span>
+        <span :class="{ active: isHelpMode }" @click="isHelpMode = true">使用指南</span>
+      </div>
+    </div>
     <div class="check" v-if="!isHelpMode">
       <header>
         <h1>FakeScreenshot：检查截图是否由本工具生成</h1>
@@ -85,6 +91,7 @@ export default {
       };
       reader.readAsDataURL(files);
     },
+    routeTo(isHelp) {},
   },
 };
 </script>
@@ -95,6 +102,7 @@ export default {
   --text-color: #606266;
 }
 *,
+body,
 h3 {
   margin: 0;
   padding: 0;
@@ -103,6 +111,48 @@ h3 {
   font-family: cursive;
   font-size: 14px;
   line-height: 1;
+  .head {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+    div {
+      width: 60%;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    span {
+      margin: 0 20px;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+    }
+    span.active {
+      color: var(--main-color);
+    }
+    span.active::after {
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+      height: 4px;
+      width: 100%;
+      background: var(--main-color);
+      content: '';
+    }
+  }
+  .head::after {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.07);
+    display: block;
+    position: absolute;
+    top: 60px;
+    color: rgba(0, 0, 0, 0.07);
+    content: '';
+    width: 100%;
+    height: 2px;
+  }
   .help {
     margin: 5vh auto;
     width: 90vw;
