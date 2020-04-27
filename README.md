@@ -5,9 +5,7 @@
 
 
 
-**2020-4-26：突破性更新**，可以修改任何网站的任何文字/图片。 Chrome扩展[下载](https://chrome.google.com/webstore/detail/fakescreenshot/jiojdapfbpmhpihdejiglphhoeakjhmi)
-
-
+**2020-4-26：突破性更新**，可以修改任何网站的任何文字/图片。 
 
 ### 功能预览
 
@@ -22,8 +20,17 @@
 
 ---
 
+下载正式版：
+
+1. 准备好Chrome浏览器和**翻墙**工具。
+2. 从Chrome扩展商店[安装](https://chrome.google.com/webstore/detail/fakescreenshot/jiojdapfbpmhpihdejiglphhoeakjhmi)即可。
+
+
+
+下载开发者版（方便不能翻墙的人使用）：
+
 1. 下载Chrome浏览器（版本越高越好）
-2. 下载[Fakescreenshot扩展](https://raw.githubusercontent.com/thegreatjavascript/FakeScreenshot/master/dist-zip/fakescreenshot-v1.0.0.zip)，并解压缩
+2. 从[本仓库中](https://raw.githubusercontent.com/thegreatjavascript/FakeScreenshot/master/dist-zip/fakescreenshot-v1.0.0.zip)下载开发版，然后解压缩。
 3. 在浏览器打开`chrome://extension`页面，并且打开右上角的“开发者模式”
 4. 点击左上角“加载已解压的扩展程序”并选择解压好的文件夹
 
