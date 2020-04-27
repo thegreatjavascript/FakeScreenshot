@@ -5,11 +5,50 @@
 
 
 
-**2020-4-26：突破性更新**，可以修改任何网站的任何文字/图片。
+**2020-4-26：突破性更新**，可以修改任何网站的任何文字/图片。 Chrome扩展[下载](https://chrome.google.com/webstore/detail/fakescreenshot/jiojdapfbpmhpihdejiglphhoeakjhmi)
 
 
 
-#### 写在前面
+### 功能预览
+
+---
+
+<video controls width="250" autoplay="true" loop="true">
+            <source src="preview/基础.webm" type="video/webm" />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+
+<video controls width="250" autoplay="true" loop="true">
+            <source src="preview/弹窗.webm" type="video/webm" />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+
+<video controls width="250" autoplay="true" loop="true">
+            <source src="preview/图片.webm" type="video/webm" />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+
+<video controls width="250" autoplay="true" loop="true">
+            <source src="preview/检测.webm" type="video/webm" />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+
+
+
+
+
+### 如何使用？
+
+---
+
+1. 下载Chrome浏览器（版本越高越好）
+2. 下载[Fakescreenshot扩展](https://raw.githubusercontent.com/thegreatjavascript/FakeScreenshot/master/dist-zip/fakescreenshot-v1.0.0.zip)，并解压缩
+3. 在浏览器打开`chrome://extension`页面，并且打开右上角的“开发者模式”
+4. 点击左上角“加载已解压的扩展程序”并选择解压好的文件夹
+
+
+
+#### 项目灵感
 
 ---
 
@@ -74,17 +113,3 @@
 
 ![test](preview/check.png)
 
-
-
-### 如何使用？
-
----
-
-1. 下载Chrome浏览器（版本越高越好）
-2. 下载[Fakescreenshot扩展](https://raw.githubusercontent.com/thegreatjavascript/FakeScreenshot/master/dist-zip/fakescreenshot-v1.0.0.zip)，并解压缩
-3. 在浏览器打开`chrome://extension`页面，并且打开右上角的“开发者模式”
-4. 点击左上角“加载已解压的扩展程序”并选择解压好的文件夹
-
-
-
-> Chrome扩展商店版本即将上线...
