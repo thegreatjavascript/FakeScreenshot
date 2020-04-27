@@ -13,28 +13,9 @@
 
 ---
 
-<video controls width="250" autoplay="true" loop="true">
-            <source src="preview/基础.webm" type="video/webm" />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-
-<video controls width="250" autoplay="true" loop="true">
-            <source src="preview/弹窗.webm" type="video/webm" />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-
-<video controls width="250" autoplay="true" loop="true">
-            <source src="preview/图片.webm" type="video/webm" />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-
-<video controls width="250" autoplay="true" loop="true">
-            <source src="preview/检测.webm" type="video/webm" />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-
-
-
+| ![basic](preview/basic.gif)     |    ![basic](preview/dialog.gif)  |
+| ---- | ---- |
+| ![basic](preview/picture.gif)     |    ![basic](preview/check.gif)  |
 
 
 ### 如何使用？
